@@ -1,0 +1,25 @@
+# Active Projects Tracker
+
+Quick-reference tracker for all active projects. Cowork reads this for context. Update when projects start, change status, or complete.
+
+---
+
+## Active
+
+| Project | Status | Owner | Next Milestone |
+|---------|--------|-------|----------------|
+| [[{{project_1}}]] | Active | [[{{preferred_name}}]] | (fill in) |
+| [[{{project_2}}]] | Active | [[{{preferred_name}}]] | (fill in) |
+| [[{{project_3}}]] | Active | [[{{preferred_name}}]] | (fill in) |
+
+## On Hold
+
+(none)
+
+## Completed
+
+(none yet)
+
+---
+
+**Last Updated:** {{install_date}}

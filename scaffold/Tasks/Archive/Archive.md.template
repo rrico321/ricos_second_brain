@@ -1,0 +1,16 @@
+# Task Archive
+**Tags:** #tasks #archive
+
+---
+
+## About
+
+Completed and cancelled tasks are moved here by the lint workflow. Each entry preserves the original created date, due date, and the date it was completed.
+
+---
+
+## Completed Tasks
+
+<!-- Format: - [x] Task description ➕ YYYY-MM-DD 📅 YYYY-MM-DD ✅ YYYY-MM-DD -->
+
+(none yet)

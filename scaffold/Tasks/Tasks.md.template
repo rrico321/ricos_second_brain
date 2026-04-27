@@ -1,0 +1,30 @@
+# Tasks
+**Tags:** #tasks #active
+**Last Updated:** {{install_date}}
+
+---
+
+## How This Works
+
+- Add tasks using: `- [ ] Description ➕ YYYY-MM-DD 📅 YYYY-MM-DD`
+- Priority (optional): place between description and ➕ - 🔺 Highest, ⏫ High, 🔼 Medium, 🔽 Low, ⏬ Lowest
+- ➕ = created date. 📅 = due date (omit if no deadline). Priority emoji is optional.
+- Status: `- [ ]` not started, `- [/]` in progress, `- [x]` done, `- [-]` cancelled
+- When done (`- [x]`), completed tasks move to [[Archive]] with `✅ YYYY-MM-DD`.
+- The Tasks plugin reads all emoji metadata natively - filtering, sorting, and urgency scoring all work.
+
+---
+
+## Active Tasks
+
+### Personal
+
+### Work
+
+### Strategic Initiatives
+
+### Direct Reports / 1:1 follow-ups
+
+### Stakeholder Comms
+
+### Decisions Pending

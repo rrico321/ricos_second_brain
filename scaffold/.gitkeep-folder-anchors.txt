@@ -1,0 +1,3 @@
+This folder uses .gitkeep files to preserve empty folders in Git.
+The folders Daily Notes/, Meeting Notes/, Projects/, People/, Candidates/, SOPs/, Bugs & Issues/ each contain a .gitkeep file.
+SETUP.md skips .gitkeep files when copying scaffold to user vault.

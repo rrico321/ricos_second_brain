@@ -1,0 +1,93 @@
+---
+tags: [index, meta]
+---
+
+# Vault Index
+
+Complete catalog of every page in this vault. Organized by category with one-line summaries. Cowork reads this first to orient itself before drilling into specific files.
+
+**Last rebuilt:** {{install_date}}
+**Total pages:** {{initial_page_count}}
+
+---
+
+## Projects ({{project_count}})
+
+| Page | Summary |
+|------|---------|
+| [[{{project_1}}]] | (fill in) |
+| [[{{project_2}}]] | (fill in) |
+| [[{{project_3}}]] | (fill in) |
+
+## People (0)
+
+| Page | Summary |
+|------|---------|
+
+## Candidates (0)
+
+| Page | Summary |
+|------|---------|
+
+## SOPs (0)
+
+| Page | Summary |
+|------|---------|
+
+## Bugs & Issues (0)
+
+| Page | Summary |
+|------|---------|
+
+## Tasks (2)
+
+| Page | Summary |
+|------|---------|
+| [[Tasks]] | Active task list. |
+| [[Archive]] | Completed/cancelled tasks with dates preserved. |
+
+## Daily Notes (0)
+
+| Page | Summary |
+|------|---------|
+
+## Meeting Notes (0)
+
+| Page | Summary |
+|------|---------|
+
+## Context (4)
+
+| Page | Summary |
+|------|---------|
+| [[context]] | {{preferred_name}}'s role, team, stack, preferences. |
+| [[memory]] | Running log of session decisions, preferences, and learnings. |
+| [[glossary]] | Domain terms (HL7, OBX, LOINC, etc.), status labels, vault folder reference. |
+| [[projects]] | Quick-reference tracker for all active projects with status and key details. |
+
+## Templates (4)
+
+| Page | Summary |
+|------|---------|
+| [[Daily Note Template]] | Templater-powered daily note with Focus, Notes, Follow-up, and Open Tasks query. |
+| [[Meeting Note Template]] | Templater-powered meeting note with attendees, takeaways, and owners table. |
+| [[Bug Report Template]] | Templater-powered bug report with ID prompt, frontmatter, and investigation steps. |
+| [[Task Template]] | Templater script that creates a task line with optional due date. |
+
+## Other (1)
+
+| Page | Summary |
+|------|---------|
+| [[Home]] | Central navigation hub. Links to projects, SOPs, dashboards, team, context, templates. |
+
+---
+
+## Maintenance Notes
+
+This index should be updated whenever pages are created, deleted, or significantly changed. Cowork updates it during vault operations and during `vault-lint` runs.
+
+### Health Check (last run: {{install_date}})
+
+**Orphan pages:** None on first install.
+**Missing pages:** None on first install.
+**Stale content:** None on first install.

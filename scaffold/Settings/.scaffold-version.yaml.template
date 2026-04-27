@@ -1,0 +1,15 @@
+scaffold_version: 1.0.0
+installed_at: {{install_date}}
+user_name: {{full_name}}
+preferred_name: {{preferred_name}}
+email: {{user_email}}
+job_title: {{job_title}}
+department: {{department}}
+optional_folders:
+  decisions: {{decisions_enabled}}
+  strategic_initiatives: {{strategic_initiatives_enabled}}
+  stakeholders: {{stakeholders_enabled}}
+  one_on_ones: {{one_on_ones_enabled}}
+direct_reports: {{direct_reports_list}}
+communication_style: {{communication_style}}
+output_preferences: {{output_preferences}}

@@ -1,0 +1,54 @@
+# Context - {{preferred_name}}
+
+This file is the canonical reference for who {{preferred_name}} is, what they do, and how they work. Cowork reads this for personalization.
+
+---
+
+## Identity
+
+- **Preferred name:** {{preferred_name}}
+- **Full name:** {{full_name}}
+- **Email:** {{user_email}}
+- **Tone preference:** {{communication_style}}. {{output_preferences}}
+
+---
+
+## Role
+
+- **Company:** Kipu Health
+- **Title:** {{job_title}}
+- **Department:** {{department}}
+- **Manager:** {{manager_name}}
+
+---
+
+## Active Projects
+
+- {{project_1}}
+- {{project_2}}
+- {{project_3}}
+
+---
+
+## Direct Reports
+
+{{direct_reports_section}}
+
+---
+
+## How I work with AI
+
+- Treat me like a peer. Don't over-explain basics.
+- I prefer structured outputs (markdown, tables, code blocks).
+- If you're unsure, say so clearly.
+- I want copy-paste-ready artifacts when I ask for them.
+
+---
+
+## Communication Rules
+
+- {{communication_style}}
+- {{output_preferences}}
+- No em dashes.
+- No emojis unless I use them first.
+- Prose for narrative, tables for data, checkboxes for tasks.

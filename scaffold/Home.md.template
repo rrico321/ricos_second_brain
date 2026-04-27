@@ -1,0 +1,69 @@
+# Home - {{preferred_name}}'s Vault
+
+Central hub for your knowledge base. Start here.
+
+**[[index|Vault Index]]** - Full catalog of every page with one-line summaries. Cowork reads this first.
+
+---
+
+## Active Tasks
+
+```tasks
+not done
+path includes Tasks
+path does not include Archive
+sort by urgency
+sort by due date
+hide task count
+hide backlink
+```
+
+---
+
+## Active Projects
+
+- [[{{project_1}}]]
+- [[{{project_2}}]]
+- [[{{project_3}}]]
+
+---
+
+## SOPs
+
+(none yet - add as you create them)
+
+---
+
+## Dashboards
+
+(none yet)
+
+---
+
+## Recent Meeting Notes
+
+(none yet)
+
+---
+
+## Team
+
+(add direct reports, peers, and key collaborators here as you create their People notes)
+
+---
+
+## Context (Cowork Reference Files)
+
+- [[context]] - Role, team, stack, preferences
+- [[memory]] - Running session log
+- [[glossary]] - Domain terms and status labels
+- [[projects]] - Active project tracker
+
+---
+
+## Templates
+
+- [[Daily Note Template]]
+- [[Meeting Note Template]]
+- [[Bug Report Template]]
+- [[Task Template]]

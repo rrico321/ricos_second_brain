@@ -1,0 +1,77 @@
+# CLAUDE.md - {{preferred_name}}'s Workspace
+
+## Who You're Working With
+
+{{full_name}} ({{preferred_name}}), {{job_title}} at Kipu Health, {{department}} department.
+
+Manager: {{manager_name}}
+
+## Read These First
+
+Before doing any vault work, the agent should read these in order:
+
+1. `Settings/Compliance.md` - org-wide HIPAA / PHI / BAA guardrails (READ FIRST, ALWAYS)
+2. `Context/context.md` - {{preferred_name}}'s role, team, stack, preferences
+3. `Context/glossary.md` - domain terms (HL7, OBX, LOINC, etc.) and general business terms
+4. `Context/projects.md` - active project tracker
+5. `Context/memory.md` - running session log
+6. `index.md` - vault catalog
+
+## Output Rules (Always Apply)
+
+- Communication style: {{communication_style}}
+- {{output_preferences}}
+- No em dashes
+- No emojis unless {{preferred_name}} uses them first
+- Prose for explanations. Tables for structured data. Code blocks for code.
+- Assume high technical literacy. Don't over-explain basics.
+
+## Compliance
+
+You MUST read `Settings/Compliance.md` and follow its rules before any data ingestion, processing, or output. The PHI hard-rule is in effect until the Anthropic BAA is signed.
+
+## Obsidian Vault
+
+This file lives at the vault root. All paths are relative to this folder.
+
+For anything vault-related, use the `obsidian-vault` skill. It covers folder structure, naming, task format, daily notes, meeting notes, projects, candidates, and plugin syntax (Dataview, Tasks, Templater, Calendar, Excalidraw).
+
+## Skill Routing
+
+| If {{preferred_name}} asks about... | Use this skill |
+|------------------------------------|---------------|
+| Notes, tasks, daily summaries, meeting notes, projects, candidates, Obsidian conventions, Dataview queries, vault maintenance | `obsidian-vault` |
+| Word documents (.docx) | `docx` |
+| Spreadsheets (.xlsx, .csv) | `xlsx` |
+| Presentations (.pptx, slides, decks) | `pptx` |
+| PDFs | `pdf` |
+| Engineering standards, code style, Kipu tech stack | `kipu-health-standards` |
+| HIPAA compliance review, PHI data flows | `hipaa-data-flow-reviewer` |
+| Incident reports, postmortems | `incident-postmortem-writer` |
+| Architecture decisions (ADRs) | `adr-generator` |
+| RFC / design documents | `rfc-design-doc` |
+| Runbooks, on-call procedures | `runbook-generator` |
+| PR descriptions | `pr-description-generator` |
+| Executive status reports | `executive-status-report` |
+| Raw meeting notes -> action items | `meeting-notes-to-actions` |
+| Code reviews | `code-review-guide` |
+| New engineer onboarding | `engineer-onboarding` |
+| Scheduled / recurring tasks | `schedule` |
+| Building or improving skills | `skill-creator` |
+
+## Installed Obsidian Plugins
+
+Dataview, Tasks, Templater, Calendar, Excalidraw.
+All plugin syntax and usage details are in the `obsidian-vault` skill's `references/` folder.
+
+## Active Projects
+
+{{project_1}}
+{{project_2}}
+{{project_3}}
+
+## Settings
+
+System files (don't edit manually):
+- `Settings/Compliance.md`
+- `Settings/.scaffold-version.yaml`
