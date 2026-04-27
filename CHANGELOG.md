@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.1 - 2026-04-27 - Bootstrap fixes
+
+Patch fixes flagged in initial audit.
+
+### Fixed
+
+- Added `scaffold/Templates/1on1 Prep Template.md` (was missing; SETUP.md Step 5 referenced it)
+- `scaffold/Tasks/Tasks.md.template` now ships with only `### Personal` and `### Work`. SETUP.md Step 5 appends opt-in subheaders (Strategic Initiatives, Direct Reports, Stakeholder Comms, Decisions Pending) only if the user said yes
+- `scaffold/CLAUDE.md.template` Manager line now uses `{{manager_name_or_none}}` placeholder; SETUP.md substitutes `(none)` if Q6 was skipped
+- SETUP.md Step 4 now documents default substitutions for skipped/empty interview answers
+- SETUP.md Step 6 project skeleton merged into a single fenced code block (was split into separate YAML and markdown blocks)
+- SETUP.md Step 5 explicitly notes that `1on1 Prep Template.md` ships in scaffold and is already copied in Step 4 (no extra copy needed)
+
 ## v1.0.0 - 2026-04-27 - Initial release
 
 First public version. Foundation for the Kipu Second Brain initiative.

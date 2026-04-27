@@ -4,7 +4,10 @@
 
 {{full_name}} ({{preferred_name}}), {{job_title}} at Kipu Health, {{department}} department.
 
-Manager: {{manager_name}}
+Manager: {{manager_name_or_none}}
+
+<!-- SETUP.md note: substitute "(none)" for {{manager_name_or_none}} if Q6 was skipped -->
+
 
 ## Read These First
 

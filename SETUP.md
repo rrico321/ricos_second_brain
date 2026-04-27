@@ -90,49 +90,63 @@ For `.gitkeep` files:
 For non-template files (e.g., `Templates/Daily Note Template.md`):
 - Copy verbatim.
 
+### Default substitutions for skipped or empty answers
+
+If the user skipped or left an answer blank, substitute these defaults before writing:
+
+| Placeholder | Default if empty |
+|-------------|------------------|
+| `{{manager_name_or_none}}` | `(none)` |
+| `{{output_preferences}}` | `(none specified)` |
+| `{{communication_style}}` | `Direct and concise` |
+| `{{project_1}}`, `{{project_2}}`, `{{project_3}}` | omit the project entirely (don't render an empty link) |
+| `{{direct_reports_list}}` | `[]` |
+| Any boolean placeholder (decisions_enabled, etc.) | `false` |
+
 Result: a fully populated vault with personalized `CLAUDE.md`, `Home.md`, `index.md`, `Context/context.md`, `Context/projects.md`, `Settings/.scaffold-version.yaml`, and `Tasks/Tasks.md`.
 
 ---
 
 ## Step 5: Apply interview-driven additions
 
-Based on interview answers, add optional folders and templates.
+`Tasks/Tasks.md` ships with two base subheaders: `### Personal` and `### Work`. Add subheaders below for each opt-in the user selected. Do not add a subheader if the user said no.
 
 If the user manages people (Q7 yes):
 - Create `<VAULT_ROOT>/1on1s/` folder
 - For each direct report name, create `<VAULT_ROOT>/1on1s/<Name>/` subfolder with a `.gitkeep` (empty)
-- Add a section to `Tasks/Tasks.md`: `### Direct Reports / 1:1 follow-ups`
-- Copy a `1on1 Prep Template.md` to `Templates/` (use the template content from this repo's `scaffold/Templates/`)
+- Append `### Direct Reports / 1:1 follow-ups` to `Tasks/Tasks.md` under `## Active Tasks`
+- The `1on1 Prep Template.md` is already shipped in `scaffold/Templates/` and copied to the user's `Templates/` folder in Step 4. No additional copy needed.
 
 If the user keeps a decision journal (Q9 yes):
 - Create `<VAULT_ROOT>/Decisions/` folder
 - Add a `Decisions/.gitkeep`
-- Add to `CLAUDE.md` skill routing: `| Logging a decision, reviewing past decisions | adr-generator |`
+- Append `### Decisions Pending` to `Tasks/Tasks.md` under `## Active Tasks`
+- Add a row to the Skill Routing table in `CLAUDE.md`: `| Logging a decision, reviewing past decisions | adr-generator |`
 
 If the user tracks strategic initiatives (Q10 yes):
 - Create `<VAULT_ROOT>/Strategic Initiatives/` folder with `.gitkeep`
-- Add a section to `Tasks/Tasks.md`: `### Strategic Initiatives`
+- Append `### Strategic Initiatives` to `Tasks/Tasks.md` under `## Active Tasks`
 
 If the user has external stakeholders (Q11 yes):
 - Create `<VAULT_ROOT>/Stakeholders/` folder with `.gitkeep`
-- Add a section to `Tasks/Tasks.md`: `### Stakeholder Comms`
+- Append `### Stakeholder Comms` to `Tasks/Tasks.md` under `## Active Tasks`
+
+After all opt-in additions, remove the HTML comment block from `Tasks/Tasks.md` (the one starting with `<!-- Additional subheaders are added by SETUP.md`). It is no longer needed.
 
 ---
 
 ## Step 6: Pre-populate Projects
 
 For each project name from Q8:
-- Create `<VAULT_ROOT>/Projects/<Project Name>.md` with the standard frontmatter and skeleton:
+- Create `<VAULT_ROOT>/Projects/<Project Name>.md` with this exact content (single file, frontmatter + body):
 
-```yaml
+````markdown
 ---
 tags: [project]
 Status: Active
 Owner: "[[{{preferred_name}}]]"
 ---
-```
 
-```markdown
 # {{Project Name}}
 
 **Status:** Active
@@ -149,9 +163,11 @@ Owner: "[[{{preferred_name}}]]"
 ## Risks
 
 ## Related
-```
+````
 
-Update `Home.md` and `index.md` with these projects.
+Update `Home.md` and `index.md` with these projects (add to Active Projects section in Home.md, add a row to the Projects table in index.md).
+
+If a project name slot is empty (user provided fewer than 3), skip that slot. Do not create empty project files.
 
 ---
 
