@@ -7,4 +7,6 @@ desktop.ini
 *.swp
 *~
 .obsidian-cache/
+.obsidian/
+.firecrawl/
 node_modules/

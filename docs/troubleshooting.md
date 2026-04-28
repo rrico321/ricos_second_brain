@@ -23,7 +23,7 @@ In Cowork prompts, use forward slashes: `C:/Users/<name>/OneDrive - Kipu Health/
 For Kipu employees:
 1. Open Cowork Settings -> Skills
 2. Look in the "Shared with you" section
-3. If not present, ask Rico to confirm the skill was shared with "Everyone at Kipu Health"
+3. If not present, ask admin to confirm the skill was shared with "Everyone at Kipu Health"
 4. Toggle the skill on
 
 For non-Kipu users:

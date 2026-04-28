@@ -31,8 +31,8 @@ Obsidian/
 ├── index.md              Full catalog of every page. Rebuild during health checks.
 ├── Context/
 │   ├── context.md        User's role, team, stack, preferences. Read once at session start if needed.
-│   ├── glossary.md       Domain terms, status labels, folder reference.
-│   ├── memory.md         Append-only running log of session decisions and learnings.
+│   ├── Glossary.md       Domain terms, status labels, folder reference.
+│   ├── Memory.md         Append-only running log of session decisions and learnings.
 │   └── projects.md       Quick-reference tracker for active projects.
 ├── Daily Notes/          YYYY-MM-DD.md
 ├── Meeting Notes/        YYYY-MM-DD - Title.md
@@ -242,28 +242,14 @@ Empty-state rule: if a category has nothing, write `None.` Never silently skip a
  
 Keep it scannable. No paragraphs.
  
-### Weekly Review
-Trigger: "weekly review", "Friday wrap", "what shipped this week".
- 
-Inputs: `Tasks/Tasks.md`, `Tasks/Archive/Archive.md`, all `Daily Notes/` from the past 7 days, all `Meeting Notes/` from the past 7 days, all active `Projects/` files, `Context/memory.md`.
- 
-Steps:
-1. Archive completed tasks: move all `- [x]` and `- [-]` lines from `Tasks/Tasks.md` to `Tasks/Archive/Archive.md`, appending `✅ <today>` if not already present.
-2. List tasks completed this week (from archive, filter by ✅ date within 7 days).
-3. List new tasks added this week (filter by ➕ date within 7 days).
-4. One-line status for each active project, noting any status changes this week.
-5. Surface stale items: tasks with no due date created 10+ days ago, projects in `Active` status with no updates in 14+ days.
-6. Append a memory.md entry summarizing the week: what shipped, key decisions, open risks.
-Output format: six sections matching the steps above. Keep it scannable.
- 
 ---
  
 ## Vault Maintenance Workflows
  
-### Append to memory.md
+### Append to Memory.md
 Trigger: end of a substantive Cowork session, or when the user says "log this", "remember", or "save to memory".
  
-1. Open `Context/memory.md`.
+1. Open `Context/Memory.md`.
 2. Insert a new entry directly under the `# Memory Log` header (newest at top).
 3. Format:
    ```

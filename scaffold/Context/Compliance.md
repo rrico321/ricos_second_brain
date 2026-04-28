@@ -1,6 +1,6 @@
 # COMPLIANCE.md - Org-Wide Guardrails
 
-These rules apply to every user of this scaffold. The `CLAUDE.md` template references `Settings/Compliance.md` (a copy of this file in your vault) as a layered guardrail so the agent reads org rules before user-specific instructions.
+These rules apply to every user of this scaffold. The `CLAUDE.md` template references `Context/Compliance.md` (a copy of this file in your vault) as a layered guardrail so the agent reads org rules before user-specific instructions.
 
 ## HIPAA and PHI
 
@@ -23,8 +23,6 @@ If Cowork detects content that may contain PHI:
 - Tell the user clearly: "This appears to contain PHI. Per Kipu policy, I cannot process this until the Anthropic BAA is signed."
 - Do not paraphrase or summarize PHI into a non-PHI form. Refusal is the only correct response.
 
-PHI workflows that need AI processing must route through AWS Bedrock, which has a BAA via AWS.
-
 ## Data classification
 
 | Class | Examples | Cowork posture |
@@ -36,11 +34,11 @@ PHI workflows that need AI processing must route through AWS Bedrock, which has 
 
 ## Connector posture
 
-For Kipu work vaults:
-- Prefer connectors routed through MCP servers with OAuth gating over personal connectors
+For work vaults:
+- Use only Kipu-approved connectors authenticated with the user's Kipu identity, routed through MCP servers with OAuth gating
+- Do not connect personal accounts (personal Gmail, personal calendar, personal Slack, etc.) to a Kipu Cowork session — this is a work tool for Kipu work
 - The Slack connector touches client channels with PHI - assume PHI exposure and act accordingly
 - The NetSuite connector touches financial data - treat as Confidential
-- Personal connectors (logged into the user's individual account) are OK for personal-tier data only
 
 Approved connectors: see `docs/connectors-approved.md` in the repo.
 

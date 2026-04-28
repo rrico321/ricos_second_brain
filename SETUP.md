@@ -42,7 +42,7 @@ Check whether any of these exist in `<VAULT_ROOT>`:
 - `CLAUDE.md`
 - `Home.md`
 - `index.md`
-- `Settings/.scaffold-version.yaml`
+- `Context/.scaffold-version.yaml`
 
 If any exist:
 - Ask the user: **An existing scaffold was detected. v1.0 only supports fresh install. Continuing will overwrite scaffold files but preserve your content (Daily Notes, Meeting Notes, Projects, Tasks, etc.). Continue?**
@@ -60,9 +60,9 @@ Ask each question. Wait for the user's answer before moving to the next.
 4. **What is your job title?**
 5. **What department do you work in?**
 6. **Who is your direct manager?** (skip if you do not have one)
-7. **Do you manage people?** If yes: how many direct reports, and what are their first names?
-8. **Top three current projects or initiatives?** (free text, comma-separated)
-9. **Do you keep a decision journal?** (track significant decisions and revisit later)
+7. **Do you manage people?** 
+8. If 7 is yes: how many direct reports, and what are their first names?
+9. **Top three current projects or initiatives?** (free text, comma-separated)
 10. **Do you track strategic initiatives or OKRs separately from project work?**
 11. **Do you have external stakeholders to track?** (board, investors, key customers)
 12. **What communication style do you prefer from Cowork?**
@@ -101,27 +101,21 @@ If the user skipped or left an answer blank, substitute these defaults before wr
 | `{{communication_style}}` | `Direct and concise` |
 | `{{project_1}}`, `{{project_2}}`, `{{project_3}}` | omit the project entirely (don't render an empty link) |
 | `{{direct_reports_list}}` | `[]` |
-| Any boolean placeholder (decisions_enabled, etc.) | `false` |
+| Any boolean placeholder (strategic_initiatives_enabled, etc.) | `false` |
 
-Result: a fully populated vault with personalized `CLAUDE.md`, `Home.md`, `index.md`, `Context/context.md`, `Context/projects.md`, `Settings/.scaffold-version.yaml`, and `Tasks/Tasks.md`.
+Result: a fully populated vault with personalized `CLAUDE.md`, `Home.md`, `index.md`, `Context/context.md`, `Context/projects.md`, `Context/Compliance.md`, `Context/.scaffold-version.yaml`, and `Tasks/Tasks.md`.
 
 ---
 
 ## Step 5: Apply interview-driven additions
 
-`Tasks/Tasks.md` ships with two base subheaders: `### Personal` and `### Work`. Add subheaders below for each opt-in the user selected. Do not add a subheader if the user said no.
+`Tasks/Tasks.md` ships with one base subheader: `### Work`. Add subheaders below for each opt-in the user selected. Do not add a subheader if the user said no.
 
 If the user manages people (Q7 yes):
 - Create `<VAULT_ROOT>/1on1s/` folder
 - For each direct report name, create `<VAULT_ROOT>/1on1s/<Name>/` subfolder with a `.gitkeep` (empty)
 - Append `### Direct Reports / 1:1 follow-ups` to `Tasks/Tasks.md` under `## Active Tasks`
 - The `1on1 Prep Template.md` is already shipped in `scaffold/Templates/` and copied to the user's `Templates/` folder in Step 4. No additional copy needed.
-
-If the user keeps a decision journal (Q9 yes):
-- Create `<VAULT_ROOT>/Decisions/` folder
-- Add a `Decisions/.gitkeep`
-- Append `### Decisions Pending` to `Tasks/Tasks.md` under `## Active Tasks`
-- Add a row to the Skill Routing table in `CLAUDE.md`: `| Logging a decision, reviewing past decisions | adr-generator |`
 
 If the user tracks strategic initiatives (Q10 yes):
 - Create `<VAULT_ROOT>/Strategic Initiatives/` folder with `.gitkeep`
@@ -137,7 +131,7 @@ After all opt-in additions, remove the HTML comment block from `Tasks/Tasks.md` 
 
 ## Step 6: Pre-populate Projects
 
-For each project name from Q8:
+For each project name from Q9:
 - Create `<VAULT_ROOT>/Projects/<Project Name>.md` with this exact content (single file, frontmatter + body):
 
 ````markdown
@@ -171,7 +165,7 @@ If a project name slot is empty (user provided fewer than 3), skip that slot. Do
 
 ---
 
-## Step 7: Create the four base schedules
+## Step 7: Create the three base schedules
 
 Use `mcp__scheduled-tasks__create_scheduled_task` for each. Read the schedule definition from `schedules/<name>.md` in this repo to get the trigger phrase, cron, and behavior.
 
@@ -180,7 +174,6 @@ Use `mcp__scheduled-tasks__create_scheduled_task` for each. Read the schedule de
 | Morning Summary | `0 8 * * 1-5` | "Run my morning summary" |
 | Lint Noon | `0 12 * * 1-5` | "Run vault lint" |
 | Lint Evening | `0 18 * * 1-5` | "Run vault lint and archive completed tasks" |
-| Weekly Review | `0 16 * * 5` | "Run my weekly review" |
 
 If the user's machine is unlikely to be on at 8am, suggest 9am as an alternative. Note that schedules require the user's machine to be on (Cowork's scheduler is not a true cron).
 
@@ -214,8 +207,8 @@ Tell the user, concisely:
 
 - Vault location confirmed
 - N folders created (list any optional ones added)
-- M files written (CLAUDE.md, Home.md, index.md, Context/*, Settings/*, Templates/*, Tasks/Tasks.md)
-- 4 schedules registered
+- M files written (CLAUDE.md, Home.md, index.md, Context/*, Templates/*, Tasks/Tasks.md)
+- 3 schedules registered
 - obsidian-vault skill verified
 - Smoke test passed
 

@@ -15,7 +15,7 @@ Patch fixes flagged in initial audit.
 ### Fixed
 
 - Added `scaffold/Templates/1on1 Prep Template.md` (was missing; SETUP.md Step 5 referenced it)
-- `scaffold/Tasks/Tasks.md.template` now ships with only `### Personal` and `### Work`. SETUP.md Step 5 appends opt-in subheaders (Strategic Initiatives, Direct Reports, Stakeholder Comms, Decisions Pending) only if the user said yes
+- `scaffold/Tasks/Tasks.md.template` now ships with only `### Work`. SETUP.md Step 5 appends opt-in subheaders (Strategic Initiatives, Direct Reports, Stakeholder Comms) only if the user said yes
 - `scaffold/CLAUDE.md.template` Manager line now uses `{{manager_name_or_none}}` placeholder; SETUP.md substitutes `(none)` if Q6 was skipped
 - SETUP.md Step 4 now documents default substitutions for skipped/empty interview answers
 - SETUP.md Step 6 project skeleton merged into a single fenced code block (was split into separate YAML and markdown blocks)
@@ -27,13 +27,13 @@ First public version. Foundation for the Kipu Second Brain initiative.
 
 ### Added
 
-- Vault scaffold (Daily Notes, Meeting Notes, Projects, People, Candidates, SOPs, Bugs & Issues, Templates, Context, Tasks, Settings)
+- Vault scaffold (Daily Notes, Meeting Notes, Projects, People, Candidates, SOPs, Bugs & Issues, Templates, Context, Tasks)
 - Personalized `CLAUDE.md` template with placeholders the interview fills in
-- `Settings/Compliance.md` with HIPAA / no-PHI / BAA gap guardrails
-- Four core schedules: Morning Summary (08:00 weekdays), Lint Noon (12:00 weekdays), Lint Evening (18:00 weekdays), Weekly Review (Friday 16:00)
+- `Context/Compliance.md` with HIPAA / no-PHI / BAA gap guardrails
+- Three core schedules: Morning Summary (08:00 weekdays), Lint Noon (12:00 weekdays), Lint Evening (18:00 weekdays)
 - Templates: Daily Note, Meeting Note, Bug Report, Task
-- Pre-filled `Context/glossary.md` with Kipu HL7 domain terms and general business terms
-- Interview-driven optional folders: 1on1s, Decisions, Strategic Initiatives, Stakeholders
+- Pre-filled `Context/Glossary.md` with Kipu HL7 domain terms and general business terms
+- Interview-driven optional folders: 1on1s, Strategic Initiatives, Stakeholders
 - `SETUP.md` bootstrap script Cowork reads and executes
 - `UPGRADE.md` documenting the three-tier update model
 - `docs/` folder: how-it-works, faq, troubleshooting, connectors-approved

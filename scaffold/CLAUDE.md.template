@@ -13,11 +13,11 @@ Manager: {{manager_name_or_none}}
 
 Before doing any vault work, the agent should read these in order:
 
-1. `Settings/Compliance.md` - org-wide HIPAA / PHI / BAA guardrails (READ FIRST, ALWAYS)
+1. `Context/Compliance.md` - org-wide HIPAA / PHI / BAA guardrails (READ FIRST, ALWAYS)
 2. `Context/context.md` - {{preferred_name}}'s role, team, stack, preferences
-3. `Context/glossary.md` - domain terms (HL7, OBX, LOINC, etc.) and general business terms
+3. `Context/Glossary.md` - domain terms (HL7, OBX, LOINC, etc.) and general business terms
 4. `Context/projects.md` - active project tracker
-5. `Context/memory.md` - running session log
+5. `Context/Memory.md` - running session log
 6. `index.md` - vault catalog
 
 ## Output Rules (Always Apply)
@@ -31,7 +31,7 @@ Before doing any vault work, the agent should read these in order:
 
 ## Compliance
 
-You MUST read `Settings/Compliance.md` and follow its rules before any data ingestion, processing, or output. The PHI hard-rule is in effect until the Anthropic BAA is signed.
+You MUST read `Context/Compliance.md` and follow its rules before any data ingestion, processing, or output. The PHI hard-rule is in effect until the Anthropic BAA is signed.
 
 ## Obsidian Vault
 
@@ -73,8 +73,8 @@ All plugin syntax and usage details are in the `obsidian-vault` skill's `referen
 {{project_2}}
 {{project_3}}
 
-## Settings
+## System Files
 
 System files (don't edit manually):
-- `Settings/Compliance.md`
-- `Settings/.scaffold-version.yaml`
+- `Context/Compliance.md`
+- `Context/.scaffold-version.yaml`

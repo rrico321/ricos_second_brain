@@ -4,6 +4,8 @@ Central hub for your knowledge base. Start here.
 
 **[[index|Vault Index]]** - Full catalog of every page with one-line summaries. Cowork reads this first.
 
+**Docs / FAQ / Troubleshooting:** https://github.com/rrico321/ricos_second_brain/tree/main/docs
+
 ---
 
 ## Active Tasks
@@ -55,8 +57,8 @@ hide backlink
 ## Context (Cowork Reference Files)
 
 - [[context]] - Role, team, stack, preferences
-- [[memory]] - Running session log
-- [[glossary]] - Domain terms and status labels
+- [[Memory]] - Running session log
+- [[Glossary]] - Domain terms and status labels
 - [[projects]] - Active project tracker
 
 ---

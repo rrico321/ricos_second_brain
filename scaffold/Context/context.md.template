@@ -18,7 +18,7 @@ This file is the canonical reference for who {{preferred_name}} is, what they do
 - **Company:** Kipu Health
 - **Title:** {{job_title}}
 - **Department:** {{department}}
-- **Manager:** {{manager_name}}
+- **Manager:** {{manager_name_or_none}}
 
 ---
 

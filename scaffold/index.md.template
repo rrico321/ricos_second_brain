@@ -61,8 +61,8 @@ Complete catalog of every page in this vault. Organized by category with one-lin
 | Page | Summary |
 |------|---------|
 | [[context]] | {{preferred_name}}'s role, team, stack, preferences. |
-| [[memory]] | Running log of session decisions, preferences, and learnings. |
-| [[glossary]] | Domain terms (HL7, OBX, LOINC, etc.), status labels, vault folder reference. |
+| [[Memory]] | Running log of session decisions, preferences, and learnings. |
+| [[Glossary]] | Domain terms (HL7, OBX, LOINC, etc.), status labels, vault folder reference. |
 | [[projects]] | Quick-reference tracker for all active projects with status and key details. |
 
 ## Templates (4)

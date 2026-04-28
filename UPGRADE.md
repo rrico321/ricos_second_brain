@@ -6,9 +6,9 @@ This repo evolves over time. Your vault is a mix of repo-derived files (the scaf
 
 | Tier | Files | Update behavior |
 |------|-------|-----------------|
-| **Core scaffold** | `Settings/Compliance.md`, `Templates/*`, schedule definitions | Replaced on update. Old versions backed up to `.scaffold-backup/<old-version>/` automatically. |
+| **Core scaffold** | `Context/Compliance.md`, `Templates/*`, schedule definitions | Replaced on update. Old versions backed up to `.scaffold-backup/<old-version>/` automatically. |
 | **Personalized** | `CLAUDE.md`, `Context/context.md`, `Context/projects.md`, `Home.md` | Never auto-replaced. New template additions surfaced as a diff. You decide what to merge. |
-| **User content** | `Daily Notes/`, `Meeting Notes/`, `Projects/`, `Tasks/`, `Candidates/`, `People/`, `Bugs & Issues/`, `SOPs/`, `Decisions/`, `1on1s/`, `Stakeholders/`, `Strategic Initiatives/`, `Context/memory.md` | Never touched. Ever. |
+| **User content** | `Daily Notes/`, `Meeting Notes/`, `Projects/`, `Tasks/`, `Candidates/`, `People/`, `Bugs & Issues/`, `SOPs/`, `1on1s/`, `Stakeholders/`, `Strategic Initiatives/`, `Context/Memory.md` | Never touched. Ever. |
 
 ## Versioning
 
@@ -18,7 +18,7 @@ Semver-style:
 - Minor (`1.x.0`): new templates, new schedules, refined skill prompts. Opt-in via update flow.
 - Major (`x.0.0`): breaking changes. Opt-in with explicit migration notes in `CHANGELOG.md`.
 
-Your installed version lives in `Settings/.scaffold-version.yaml` in your vault.
+Your installed version lives in `Context/.scaffold-version.yaml` in your vault.
 
 ## How to check for updates
 
@@ -31,7 +31,7 @@ Cowork will:
 3. Walk you through each change
 4. Back up Core scaffold files to `.scaffold-backup/<old-version>/` before replacing
 5. Show diffs for Personalized files and ask before merging anything
-6. Update `Settings/.scaffold-version.yaml` when done
+6. Update `Context/.scaffold-version.yaml` when done
 
 ## What if I customized a Core scaffold file?
 
@@ -43,4 +43,4 @@ There is no formal rollback. The `.scaffold-backup/` folder preserves prior vers
 
 ## Skill updates
 
-The `obsidian-vault` skill itself is NOT updated through this repo. It is shared via Cowork's per-skill share toggle. When the skill owner publishes a change, it propagates to everyone instantly. Your `Settings/.scaffold-version.yaml` does not track skill version.
+The `obsidian-vault` skill itself is NOT updated through this repo. It is shared via Cowork's per-skill share toggle. When the skill owner publishes a change, it propagates to everyone instantly. Your `Context/.scaffold-version.yaml` does not track skill version.

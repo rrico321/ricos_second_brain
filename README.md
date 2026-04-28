@@ -1,10 +1,10 @@
 # rico-second-brain-poc
 
-Foundation for any Kipu Health employee (or external user) to spin up a personal AI-assisted second brain using Claude Cowork and Obsidian. Bring an empty vault. Run the bootstrap. End up with a personalized `CLAUDE.md`, four scheduled assistants, and a working knowledge graph in 10-15 minutes.
+Foundation for any Kipu Health employee (or external user) to spin up a personal AI-assisted second brain using Claude Cowork and Obsidian. Bring an empty vault. Run the bootstrap. End up with a personalized `CLAUDE.md`, three scheduled assistants, and a working knowledge graph in 10-15 minutes.
 
 ## Status
 
-Alpha. v1.0.0. Private until stress-tested with Chris Duncombe and Nikki Kent. Targeting May ELT demo.
+Alpha. v1.0.0. Private until stress-tested with required parties. 
 
 ## Who this is for
 
@@ -15,16 +15,22 @@ Alpha. v1.0.0. Private until stress-tested with Chris Duncombe and Nikki Kent. T
 
 - An Obsidian vault scaffold with sensible folders and templates
 - A personalized `CLAUDE.md` that routes Cowork to the right skill for each task
-- Four scheduled assistants: morning summary, midday lint, evening lint with archive, weekly review
+- Three scheduled assistants: morning summary, midday lint, evening lint with archive
 - The `obsidian-vault` skill that knows your conventions, naming, plugin syntax, and maintenance workflows
 - A `Compliance.md` guardrail referenced from `CLAUDE.md` so the agent reads org rules first
 
 ## Quick start
 
 1. Install Obsidian (https://obsidian.md)
-2. Create an empty vault on Microsoft 365 / OneDrive (Kipu employees) or iCloud (personal)
-3. Open Cowork and point it at the vault folder
-4. Tell Cowork: `Go to https://github.com/rico/rico-second-brain-poc and run SETUP.md`
+2. Create an empty vault on Microsoft 365 / OneDrive (Kipu employees) 
+3. In Obsidian, open **Settings → Community plugins**, turn on Community plugins, and install + enable these four:
+   - **Dataview** — query notes like a database
+   - **Tasks** — task syntax with due dates, priority, and queries
+   - **Templater** — dynamic note templates (powers Daily/Meeting/Bug/Task templates)
+   - **Calendar** — daily-note navigation
+   - Optional: **Excalidraw** (sketches and diagrams). The skill knows how to use it if installed.
+1. Open Cowork and point it at the vault folder
+2. Tell Cowork: `Go to https://github.com/rrico321/ricos_second_brain and run SETUP.md`
 
 That is the full install. The rest is Cowork's job.
 

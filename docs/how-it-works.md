@@ -14,7 +14,7 @@ A personalized routing file at the vault root. Cowork loads it on every session 
 
 - Who you are
 - How you communicate
-- Which org rules apply (via Settings/Compliance.md reference)
+- Which org rules apply (via Context/Compliance.md reference)
 - Which skill to use for which kind of request
 
 ## 3. Skill layer (obsidian-vault)
@@ -27,12 +27,11 @@ For non-Kipu: install the `.skill` from `releases/` in this repo via claude.ai â
 
 ## 4. Schedule layer
 
-Four scheduled tasks Cowork runs automatically (when your machine is on):
+Three scheduled tasks Cowork runs automatically (when your machine is on):
 
 - 08:00 weekdays - Morning Summary
 - 12:00 weekdays - Lint (read-only)
 - 18:00 weekdays - Lint + archive
-- 16:00 Friday - Weekly Review
 
 ## How a user interacts
 
@@ -40,7 +39,6 @@ Plain English to Cowork. Examples:
 
 - "I had a meeting with X about Y, add it to my obsidian"
 - "What are my tasks today?"
-- "Log a decision about Z"
 - "Run a vault lint"
 - "Check for second-brain updates"
 
@@ -61,6 +59,6 @@ CLAUDE.md is loaded automatically by Cowork on every session start. It is the si
 - User identity
 - Communication preferences
 - Skill routing rules
-- Compliance gates (via reference to Settings/Compliance.md)
+- Compliance gates (via reference to Context/Compliance.md)
 
 This means every session is consistent without per-session repetition.
