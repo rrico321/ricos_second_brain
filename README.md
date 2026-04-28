@@ -15,7 +15,7 @@ Alpha. v1.0.0. Private until stress-tested with required parties.
 
 - An Obsidian vault scaffold with sensible folders and templates
 - A personalized `CLAUDE.md` that routes Cowork to the right skill for each task
-- Three scheduled assistants: morning summary, midday lint, evening lint with archive
+- Three scheduled assistants: morning summary, midday Vault Tidy, evening Vault Tidy with archive
 - The `obsidian-vault` skill that knows your conventions, naming, plugin syntax, and maintenance workflows
 - A `Compliance.md` guardrail referenced from `CLAUDE.md` so the agent reads org rules first
 

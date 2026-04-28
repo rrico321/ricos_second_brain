@@ -177,8 +177,8 @@ Use `mcp__scheduled-tasks__create_scheduled_task` for each. Read the schedule de
 | Name | Cron | Trigger phrase |
 |------|------|----------------|
 | Morning Summary | `0 8 * * 1-5` | "Run my morning summary" |
-| Lint Noon | `0 12 * * 1-5` | "Run vault lint" |
-| Lint Evening | `0 18 * * 1-5` | "Run vault lint and archive completed tasks" |
+| Vault Tidy (Noon) | `0 12 * * 1-5` | "Tidy my vault" |
+| Vault Tidy (Evening) | `0 18 * * 1-5` | "Tidy my vault and archive completed tasks" |
 
 If the user's machine is unlikely to be on at 8am, suggest 9am as an alternative. Note that schedules require the user's machine to be on (Cowork's scheduler is not a true cron).
 

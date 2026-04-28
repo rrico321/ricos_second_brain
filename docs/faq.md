@@ -1,5 +1,11 @@
 # FAQ
 
+## What goes in `Inbox/`?
+
+Anything you don't want to file in the moment. Voice transcripts, half-formed ideas, links you saw and want to think about later, screenshots, a paragraph someone sent you in Slack that you might want to keep. Drop it in `Inbox/` and move on with your day.
+
+The Vault Tidy schedules (Noon and Evening) will count Inbox items and flag if you have any. When you have a moment, say `sort inbox` and Cowork will classify each item, propose a destination (Tasks, a Project, Reference, Archive, or drop), and move them on your approval. Capture-first, sort-later.
+
 ## Why does the schedule require my machine to be on?
 
 Cowork's scheduler runs in the desktop app process. It is not a true server-side cron. If your machine is off or asleep at the scheduled time, the schedule does not fire. We're tracking Anthropic's progress on a true cloud-side scheduler.

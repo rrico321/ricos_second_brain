@@ -8,7 +8,7 @@ A tour of every folder and file in your vault — what it is, when it's used, an
 |---|---|---|---|
 | `CLAUDE.md` | Routing manifest. Lists who you are, what to read first, and which skill handles what kind of request. | Cowork reads it on every session start. You rarely edit. | Single source of truth for agent behavior in this vault. Anything in here overrides default Cowork behavior. |
 | `Home.md` | Your manual dashboard. Live Tasks query, active projects, recent meeting notes, team links. | Open in Obsidian when you want a human view of "what's going on." | Human-facing nav hub. Cowork doesn't depend on it. |
-| `index.md` | Catalog of every page in the vault with one-line summaries. | Cowork reads it before drilling into specific files. The lint workflows refresh it. | Lets Cowork orient without scanning the whole vault. |
+| `index.md` | Catalog of every page in the vault with one-line summaries. | Cowork reads it before drilling into specific files. The Tidy workflows refresh it. | Lets Cowork orient without scanning the whole vault. |
 
 ## Daily-flow folders (you write here all the time)
 
@@ -16,7 +16,8 @@ A tour of every folder and file in your vault — what it is, when it's used, an
 |---|---|---|---|
 | `Daily Notes/` | `YYYY-MM-DD.md` | One per workday. Use the `Daily Note Template`. | Journal + scratchpad. Focus, free notes, tomorrow / follow-ups, live open-tasks query. |
 | `Meeting Notes/` | `YYYY-MM-DD - Title.md` | One per meeting. Auto-created when you say "I had a meeting with X" or paste a transcript. | Permanent record: subject, key takeaways, owners table, links back to projects/people. |
-| `Tasks/` | `Tasks.md` (active), `Archive/Archive.md` (done) | Add tasks anywhere in conversation. Lint Evening archives `[x]` and `[-]` lines. | Single source of truth for everything you owe or are tracking. Powered by the Tasks plugin so queries like "due before today, sort by urgency" just work. |
+| `Tasks/` | `Tasks.md` (active), `Archive/Archive.md` (done) | Add tasks anywhere in conversation. Tidy Evening archives `[x]` and `[-]` lines. | Single source of truth for everything you owe or are tracking. Powered by the Tasks plugin so queries like "due before today, sort by urgency" just work. |
+| `Inbox/` | Free-form, any filename | Drop anything here that doesn't have an obvious home: voice transcripts, half-formed ideas, links, screenshots. Tidy Noon and Tidy Evening flag the count; on-demand `sort inbox` proposes destinations and moves them. | Capture-first landing zone. Don't think about filing in the moment - just drop it here. |
 
 ## Context / reference (read by Cowork on demand)
 
@@ -54,8 +55,9 @@ If you said "no" to any of these during the interview, the matching folder simpl
 
 1. **08:00 weekday** — `Morning Summary` schedule fires. Cowork reads `CLAUDE.md` → loads the `obsidian-vault` skill → reads `Tasks/Tasks.md`, the most recent `Daily Notes/`, recent `Meeting Notes/`, and active `Projects/`. Output: 4 sections (Overdue, Due in 3 days, Stale undated, Project status).
 2. **Throughout the day** — meetings produce `Meeting Notes/<date> - Title.md` with action items pushed into `Tasks/Tasks.md` under `### Work`. Decisions worth keeping go to `Context/Memory.md`.
-3. **12:00 weekday** — `Lint Noon` runs read-only health check: orphan pages, broken wikilinks, stale daily notes, `Active` projects with no recent updates.
-4. **18:00 weekday** — `Lint Evening` runs the same lint plus archives any `- [x]` / `- [-]` task lines from `Tasks.md` to `Archive.md` with a `✅ <today>` stamp.
+3. **12:00 weekday** — `Vault Tidy (Noon)` runs read-only health check: orphan pages, broken wikilinks, stale daily notes, `Active` projects with no recent updates. Counts `Inbox/` items and flags if any are waiting.
+4. **18:00 weekday** — `Vault Tidy (Evening)` runs the same Tidy pass plus archives any `- [x]` / `- [-]` task lines from `Tasks.md` to `Archive.md` with a `✅ <today>` stamp. Same Inbox flag.
+5. **On demand** — When you have a moment, say `sort inbox` and Cowork classifies each Inbox item, proposes a destination + filename + frontmatter, and moves them on your approval.
 
 ## Three-tier file model (worth knowing)
 
@@ -63,6 +65,6 @@ If you said "no" to any of these during the interview, the matching folder simpl
 |---|---|---|
 | Core scaffold | `Context/Compliance.md`, `Templates/*`, schedule definitions | Will be replaced on update. Old version backed up to `.scaffold-backup/<old-version>/`. |
 | Personalized | `CLAUDE.md`, `Context/context.md`, `Context/projects.md`, `Home.md` | Will never auto-replace. Diff is shown, you decide what to merge. |
-| User content | Everything in `Daily Notes/`, `Meeting Notes/`, `Projects/`, `Tasks/`, `People/`, `Candidates/`, `Issues/`, `SOPs/`, `1on1s/`, `Strategic Initiatives/`, `Stakeholders/`, `Context/Memory.md` | Never touched on update. Ever. |
+| User content | Everything in `Daily Notes/`, `Meeting Notes/`, `Projects/`, `Tasks/`, `People/`, `Candidates/`, `Issues/`, `SOPs/`, `Inbox/`, `1on1s/`, `Strategic Initiatives/`, `Stakeholders/`, `Context/Memory.md` | Never touched on update. Ever. |
 
 > **Note on updates:** The `cowork check for second-brain updates` flow and the automatic `.scaffold-backup/` mechanism are documented in `UPGRADE.md` but **not yet implemented in v1.0.x**. For now, if you want to roll back a manual change, use OneDrive version history (right-click file → Version history). The auto-update flow lands in a v1.x release.

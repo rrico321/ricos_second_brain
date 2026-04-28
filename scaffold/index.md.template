@@ -39,6 +39,11 @@ Complete catalog of every page in this vault. Organized by category with one-lin
 | Page | Summary |
 |------|---------|
 
+## Inbox (0)
+
+| Page | Summary |
+|------|---------|
+
 ## Tasks (2)
 
 | Page | Summary |
@@ -84,7 +89,7 @@ Complete catalog of every page in this vault. Organized by category with one-lin
 
 ## Maintenance Notes
 
-This index should be updated whenever pages are created, deleted, or significantly changed. Cowork updates it during vault operations and during `vault-lint` runs.
+This index should be updated whenever pages are created, deleted, or significantly changed. Cowork updates it during vault operations and during `Vault Tidy` runs.
 
 ### Health Check (last run: {{install_date}})
 

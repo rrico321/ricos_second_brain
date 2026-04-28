@@ -18,6 +18,7 @@ This is your personal Obsidian vault, scaffolded by `rico-second-brain-poc`.
 ├── People/               FirstName LastName.md
 ├── SOPs/                 SOP - Title.md
 ├── Issues/               Bug reports, dashboards, operational issues — free-form titles
+├── Inbox/                Capture-first dumping ground. Drop anything here that doesn't have an obvious home. Sort with `sort inbox`.
 ├── Tasks/                Active and archived task list
 └── (interview-added)     Strategic Initiatives/, Stakeholders/, 1on1s/, Candidates/
 ```
@@ -33,8 +34,10 @@ This is your personal Obsidian vault, scaffolded by `rico-second-brain-poc`.
 Three schedules run automatically (when your machine is on):
 
 - 08:00 weekdays - Morning Summary
-- 12:00 weekdays - Lint (read-only health check)
-- 18:00 weekdays - Lint + archive completed tasks
+- 12:00 weekdays - Vault Tidy (read-only health check + Inbox flag)
+- 18:00 weekdays - Vault Tidy + archive completed tasks
+
+On demand: `sort inbox` — Cowork classifies and proposes destinations for anything sitting in `Inbox/`.
 
 ## Updating
 

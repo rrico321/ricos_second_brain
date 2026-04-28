@@ -1,5 +1,27 @@
 # Changelog
 
+## v1.0.4 - 2026-04-28 - Inbox folder, rename Lint to Tidy
+
+### Added
+
+- New `scaffold/Inbox/` folder. Capture-first dumping ground for content that doesn't have an obvious home (voice transcripts, half-formed ideas, links, screenshots).
+- New on-demand workflow trigger: `sort inbox`. Cowork classifies Inbox items, proposes destinations, moves on user approval.
+- FAQ entry: "What goes in Inbox/?"
+
+### Changed
+
+- **Renamed "Lint" to "Tidy" everywhere.** Audience-friendly term. "Lint" is engineering jargon; "Tidy" describes the actual behavior.
+- `schedules/lint-noon.md` → `schedules/tidy-noon.md`. Schedule name `Vault Lint (Noon)` → `Vault Tidy (Noon)`. Trigger phrase `Run vault lint` → `Tidy my vault`.
+- `schedules/lint-evening.md` → `schedules/tidy-evening.md`. Schedule name `Vault Lint (Evening)` → `Vault Tidy (Evening)`. Trigger phrase `Run vault lint and archive completed tasks` → `Tidy my vault and archive completed tasks`.
+- Both Tidy schedules now also count items in `Inbox/` and flag if any are waiting (read-only - they don't auto-sort).
+- Updated `SETUP.md` Step 7 schedule table with new names and trigger phrases.
+- Updated `docs/how-it-works.md`, `docs/vault-anatomy.md`, `docs/faq.md`, `README.md`, `scaffold/README.md` to reference Tidy instead of Lint.
+- Updated `scaffold/index.md.template` with `## Inbox (0)` section and corrected the maintenance note from `vault-lint` to `Vault Tidy`.
+
+### Why
+
+"Lint" came from engineering culture (linting code). The audience for this scaffold is non-technical leaders. "Tidy" tells them what the workflow actually does (light cleanup, surface what's off, archive what's done) without the engineering pedigree. The Inbox folder closes a real gap - users had nowhere to drop unstructured captures, so everything had to be filed in the moment.
+
 ## v1.0.2 - 2026-04-27 - Ship obsidian-vault.skill, drop placeholder
 
 ### Changed
