@@ -8,6 +8,8 @@ Plain markdown files on OneDrive. Cross-platform, vendor-neutral. Cowork reads a
 
 Folder structure is opinionated but not prescriptive. The interview adapts it to your role.
 
+For a folder-by-folder tour of what lives where and why — root files, daily-flow folders, context/reference, knowledge folders, opt-in folders, and how it all flows in a typical week — see **[`vault-anatomy.md`](./vault-anatomy.md)**.
+
 ## 2. Routing layer (CLAUDE.md)
 
 A personalized routing file at the vault root. Cowork loads it on every session start. It tells Cowork:

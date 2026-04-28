@@ -49,6 +49,7 @@ That is the full install. The rest is Cowork's job.
 - `CHANGELOG.md` - what's in each version
 - `CONTRIBUTING.md` - how to suggest changes
 - `docs/how-it-works.md` - architecture explainer
+- `docs/vault-anatomy.md` - folder-by-folder tour of what lives in your vault and why
 - `docs/faq.md` - common questions
 - `docs/troubleshooting.md` - install issues
 - `docs/connectors-approved.md` - Kipu-approved connector list
