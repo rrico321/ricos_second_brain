@@ -8,7 +8,7 @@ This repo evolves over time. Your vault is a mix of repo-derived files (the scaf
 |------|-------|-----------------|
 | **Core scaffold** | `Context/Compliance.md`, `Templates/*`, schedule definitions | Replaced on update. Old versions backed up to `.scaffold-backup/<old-version>/` automatically. |
 | **Personalized** | `CLAUDE.md`, `Context/context.md`, `Context/projects.md`, `Home.md` | Never auto-replaced. New template additions surfaced as a diff. You decide what to merge. |
-| **User content** | `Daily Notes/`, `Meeting Notes/`, `Projects/`, `Tasks/`, `Candidates/`, `People/`, `Bugs & Issues/`, `SOPs/`, `1on1s/`, `Stakeholders/`, `Strategic Initiatives/`, `Context/Memory.md` | Never touched. Ever. |
+| **User content** | `Daily Notes/`, `Meeting Notes/`, `Projects/`, `Tasks/`, `Candidates/`, `People/`, `Issues/`, `SOPs/`, `1on1s/`, `Stakeholders/`, `Strategic Initiatives/`, `Context/Memory.md` | Never touched. Ever. |
 
 ## Versioning
 

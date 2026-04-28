@@ -168,9 +168,8 @@ Used in YAML frontmatter on Projects, Bugs, Candidates, etc.
 - `Meeting Notes/` - dev syncs, ops reviews, customer calls
 - `Projects/` - active initiatives with status and timelines
 - `People/` - team members, peers, stakeholders
-- `Candidates/` - interview notes for open roles
 - `SOPs/` - standard operating procedures
-- `Bugs & Issues/` - bug reports, dashboards, operational issues
+- `Issues/` - bug reports, dashboards, operational issues
 - `Tasks/` - running task list and archive
 - `Templates/` - reusable templates for new notes
 - `Context/` - reference files for Cowork (includes `Compliance.md` and `.scaffold-version.yaml` system files - don't manually edit those)
@@ -180,3 +179,4 @@ Optional (added by interview):
 - `1on1s/` - per-direct-report folders for 1:1 prep and notes
 - `Strategic Initiatives/` - top-level themes (OKRs, multi-quarter bets)
 - `Stakeholders/` - external partners (board, investors, key customers)
+- `Candidates/` - interview notes for open roles (created if you participate in hiring)

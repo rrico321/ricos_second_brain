@@ -16,11 +16,10 @@ This is your personal Obsidian vault, scaffolded by `rico-second-brain-poc`.
 ├── Meeting Notes/        YYYY-MM-DD - Title.md
 ├── Projects/             ProjectName.md
 ├── People/               FirstName LastName.md
-├── Candidates/           FirstName LastName.md (interview notes)
 ├── SOPs/                 SOP - Title.md
-├── Bugs & Issues/        Free-form descriptive titles
+├── Issues/               Bug reports, dashboards, operational issues — free-form titles
 ├── Tasks/                Active and archived task list
-└── (interview-added)     Strategic Initiatives/, Stakeholders/, 1on1s/
+└── (interview-added)     Strategic Initiatives/, Stakeholders/, 1on1s/, Candidates/
 ```
 
 ## How to use it

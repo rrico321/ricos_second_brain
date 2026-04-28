@@ -66,11 +66,12 @@ Ask each question one at a time, in plain text, in the order listed below. Wait 
 8. **Top three current projects or initiatives?** (free text, comma-separated)
 9. **Do you track strategic initiatives or OKRs separately from project work?** (yes / no)
 10. **Do you have external stakeholders to track?** (board, investors, key customers — yes / no)
-11. **What communication style do you prefer from Cowork?** (reply with the number)
+11. **Do you participate in hiring?** (interview candidates for open roles — yes / no)
+12. **What communication style do you prefer from Cowork?** (reply with the number)
     1. Direct and concise (default)
     2. Conversational
     3. Detailed with explanations
-12. **Any output preferences I should know about?** (free text, e.g., "no em dashes", "Spanish for family-related notes", "always include a TL;DR" — or reply "none")
+13. **Any output preferences I should know about?** (free text, e.g., "no em dashes", "Spanish for family-related notes", "always include a TL;DR" — or reply "none")
 
 Save all answers as `{{placeholder_name}}` values for the next steps.
 
@@ -125,6 +126,9 @@ If the user tracks strategic initiatives (Q9 yes):
 If the user has external stakeholders (Q10 yes):
 - Create `<VAULT_ROOT>/Stakeholders/` folder with `.gitkeep`
 - Append `### Stakeholder Comms` to `Tasks/Tasks.md` under `## Active Tasks`
+
+If the user participates in hiring (Q11 yes):
+- Create `<VAULT_ROOT>/Candidates/` folder with `.gitkeep`
 
 After all opt-in additions, remove the HTML comment block from `Tasks/Tasks.md` (the one starting with `<!-- Additional subheaders are added by SETUP.md`). It is no longer needed.
 

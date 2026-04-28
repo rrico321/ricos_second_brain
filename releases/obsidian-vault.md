@@ -43,7 +43,7 @@ Obsidian/
 │   ├── Tasks.md          Active tasks, organized under category subheaders.
 │   └── Archive/Archive.md  Completed/cancelled tasks with ✅ date.
 ├── SOPs/                 SOP - Title.md
-├── Bugs & Issues/        Free-form. Used for dashboards too.
+├── Issues/               Free-form. Used for dashboards too.
 └── Templates/            Templater source files. Read before creating new notes.
 ```
  
@@ -278,7 +278,7 @@ Trigger: the user asks for a vault health check, lint, "rebuild index", or after
  
 1. Scan the entire vault: every `.md` file outside `.obsidian/` and outside `Templates/` (templates listed in their own table).
 2. For each file, derive a one-line summary from its title, frontmatter, and first paragraph.
-3. Group into the existing index.md categories: Projects, People, Candidates, SOPs, Bugs & Issues, Tasks, Daily Notes, Meeting Notes, Context, Templates, Other.
+3. Group into the existing index.md categories: Projects, People, Candidates, SOPs, Issues, Tasks, Daily Notes, Meeting Notes, Context, Templates, Other.
 4. Update `**Last rebuilt:**` and `**Total pages:**` at the top.
 5. Run health checks and append to the `### Health Check` section:
    - **Orphan pages** - files with no inbound links from any other vault file. Use grep across all `.md` for `[[Filename]]` references.

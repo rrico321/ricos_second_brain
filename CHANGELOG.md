@@ -27,13 +27,13 @@ First public version. Foundation for the Kipu Second Brain initiative.
 
 ### Added
 
-- Vault scaffold (Daily Notes, Meeting Notes, Projects, People, Candidates, SOPs, Bugs & Issues, Templates, Context, Tasks)
+- Vault scaffold (Daily Notes, Meeting Notes, Projects, People, SOPs, Issues, Templates, Context, Tasks)
 - Personalized `CLAUDE.md` template with placeholders the interview fills in
 - `Context/Compliance.md` with HIPAA / no-PHI / BAA gap guardrails
 - Three core schedules: Morning Summary (08:00 weekdays), Lint Noon (12:00 weekdays), Lint Evening (18:00 weekdays)
 - Templates: Daily Note, Meeting Note, Bug Report, Task
 - Pre-filled `Context/Glossary.md` with Kipu HL7 domain terms and general business terms
-- Interview-driven optional folders: 1on1s, Strategic Initiatives, Stakeholders
+- Interview-driven optional folders: 1on1s, Strategic Initiatives, Stakeholders, Candidates
 - `SETUP.md` bootstrap script Cowork reads and executes
 - `UPGRADE.md` documenting the three-tier update model
 - `docs/` folder: how-it-works, faq, troubleshooting, connectors-approved
