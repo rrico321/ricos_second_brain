@@ -11,11 +11,13 @@ Never:
 - Touch files outside the user's vault folder
 - Skip the interview
 - Assume answers if the user does not respond
+- **Batch interview questions.** Do NOT ask multiple questions in one message, do NOT use AskUserQuestion to bundle several questions, and do NOT pre-fill answers from any user profile or memory. The interview must be strictly sequential: one question, wait for the answer, next question.
 
 Always:
 - Confirm before destructive operations
 - Use forward slashes in paths the user sees
 - Translate paths per-OS when actually writing files
+- Ask interview questions one at a time, in plain text, in the order listed in Step 3
 
 The user is non-technical. Prefer plain English over jargon.
 
@@ -52,24 +54,23 @@ If any exist:
 
 ## Step 3: Run the interview
 
-Ask each question. Wait for the user's answer before moving to the next.
+Ask each question one at a time, in plain text, in the order listed below. Wait for the user's answer before moving to the next. Do not batch, do not pre-fill, do not use structured pickers.
 
 1. **What is your full name?** (used in CLAUDE.md and Context)
 2. **What is your preferred name?** (what Cowork should call you)
 3. **What is your email address?**
 4. **What is your job title?**
 5. **What department do you work in?**
-6. **Who is your direct manager?** (skip if you do not have one)
-7. **Do you manage people?** 
-8. If 7 is yes: how many direct reports, and what are their first names?
-9. **Top three current projects or initiatives?** (free text, comma-separated)
-10. **Do you track strategic initiatives or OKRs separately from project work?**
-11. **Do you have external stakeholders to track?** (board, investors, key customers)
-12. **What communication style do you prefer from Cowork?**
-    - Direct and concise (default)
-    - Conversational
-    - Detailed with explanations
-13. **Any output preferences I should know about?** (free text, e.g., "no em dashes", "Spanish for family-related notes", "always include a TL;DR")
+6. **Who is your direct manager?** (reply "none" if you do not have one)
+7. **Do you manage people? If yes, list their first names separated by commas (e.g., "Maria, Jamal, Priya"). If not, reply "no".**
+8. **Top three current projects or initiatives?** (free text, comma-separated)
+9. **Do you track strategic initiatives or OKRs separately from project work?** (yes / no)
+10. **Do you have external stakeholders to track?** (board, investors, key customers — yes / no)
+11. **What communication style do you prefer from Cowork?** (reply with the number)
+    1. Direct and concise (default)
+    2. Conversational
+    3. Detailed with explanations
+12. **Any output preferences I should know about?** (free text, e.g., "no em dashes", "Spanish for family-related notes", "always include a TL;DR" — or reply "none")
 
 Save all answers as `{{placeholder_name}}` values for the next steps.
 
@@ -111,17 +112,17 @@ Result: a fully populated vault with personalized `CLAUDE.md`, `Home.md`, `index
 
 `Tasks/Tasks.md` ships with one base subheader: `### Work`. Add subheaders below for each opt-in the user selected. Do not add a subheader if the user said no.
 
-If the user manages people (Q7 yes):
+If the user manages people (Q7 reply is not "no"):
 - Create `<VAULT_ROOT>/1on1s/` folder
-- For each direct report name, create `<VAULT_ROOT>/1on1s/<Name>/` subfolder with a `.gitkeep` (empty)
+- For each first name in the Q7 reply, create `<VAULT_ROOT>/1on1s/<Name>/` subfolder with a `.gitkeep` (empty)
 - Append `### Direct Reports / 1:1 follow-ups` to `Tasks/Tasks.md` under `## Active Tasks`
 - The `1on1 Prep Template.md` is already shipped in `scaffold/Templates/` and copied to the user's `Templates/` folder in Step 4. No additional copy needed.
 
-If the user tracks strategic initiatives (Q10 yes):
+If the user tracks strategic initiatives (Q9 yes):
 - Create `<VAULT_ROOT>/Strategic Initiatives/` folder with `.gitkeep`
 - Append `### Strategic Initiatives` to `Tasks/Tasks.md` under `## Active Tasks`
 
-If the user has external stakeholders (Q11 yes):
+If the user has external stakeholders (Q10 yes):
 - Create `<VAULT_ROOT>/Stakeholders/` folder with `.gitkeep`
 - Append `### Stakeholder Comms` to `Tasks/Tasks.md` under `## Active Tasks`
 
@@ -131,7 +132,7 @@ After all opt-in additions, remove the HTML comment block from `Tasks/Tasks.md` 
 
 ## Step 6: Pre-populate Projects
 
-For each project name from Q9:
+For each project name from Q8:
 - Create `<VAULT_ROOT>/Projects/<Project Name>.md` with this exact content (single file, frontmatter + body):
 
 ````markdown
