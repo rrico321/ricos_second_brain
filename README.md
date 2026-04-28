@@ -9,7 +9,7 @@ Alpha. v1.0.0. Private until stress-tested with Chris Duncombe and Nikki Kent. T
 ## Who this is for
 
 - Primary: Kipu Health employees with access to a Cowork plan where the `obsidian-vault` skill has been shared org-wide
-- Secondary: External users (manual `.plugin` install from `releases/`)
+- Secondary: External users (manual `.skill` install from `releases/` via claude.ai)
 
 ## What you get
 

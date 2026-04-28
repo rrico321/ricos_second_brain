@@ -23,7 +23,7 @@ A Cowork skill that knows the vault's conventions, naming rules, task format, pl
 
 For Kipu employees: this skill is shared via Cowork's per-skill share. Toggle it on in Settings -> Skills.
 
-For non-Kipu: install the .plugin from releases/ in this repo.
+For non-Kipu: install the `.skill` from `releases/` in this repo via claude.ai → Settings → Profile → Claude's skills.
 
 ## 4. Schedule layer
 

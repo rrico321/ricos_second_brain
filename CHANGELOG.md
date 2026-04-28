@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.2 - 2026-04-27 - Ship obsidian-vault.skill, drop placeholder
+
+### Changed
+
+- Added `releases/obsidian-vault.skill` (the actual fallback artifact for non-Kipu users)
+- Removed `releases/obsidian-vault.plugin.PLACEHOLDER`
+- Updated `SETUP.md`, `docs/troubleshooting.md`, `docs/how-it-works.md`, `docs/faq.md`, and `README.md` to reference `.skill` (claude.ai upload path) instead of `.plugin` (Claude Desktop path). Non-Kipu users install via claude.ai → Settings → Profile → Claude's skills.
+
 ## v1.0.1 - 2026-04-27 - Bootstrap fixes
 
 Patch fixes flagged in initial audit.

@@ -194,7 +194,7 @@ If yes: proceed.
 
 If no:
 - For Kipu employees: tell the user "Open Settings -> Skills in Cowork. The `obsidian-vault` skill should be in your Shared section. Toggle it on. Then say 'continue setup' here."
-- For non-Kipu: tell the user "Download `releases/obsidian-vault.plugin` from this repo and drag it into Claude Desktop to install. Then say 'continue setup' here."
+- For non-Kipu: tell the user "Download `releases/obsidian-vault.skill` from this repo, then go to claude.ai → Settings → Profile → Claude's skills and upload it. Then say 'continue setup' here."
 
 ---
 

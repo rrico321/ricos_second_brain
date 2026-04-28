@@ -27,10 +27,10 @@ For Kipu employees:
 4. Toggle the skill on
 
 For non-Kipu users:
-1. Download `releases/obsidian-vault.plugin` from the repo
-2. Drag the file into Claude Desktop
-3. Click Install
-4. Restart Cowork
+1. Download `releases/obsidian-vault.skill` from the repo
+2. Go to claude.ai → Settings → Profile → Claude's skills
+3. Drag the file into the upload area
+4. Restart Cowork / refresh the session
 
 ## Schedules don't fire
 

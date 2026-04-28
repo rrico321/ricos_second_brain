@@ -10,7 +10,7 @@ The vault is portable - point Obsidian Mobile at the same OneDrive folder and yo
 
 ## What if I leave Kipu?
 
-Your vault belongs to you. The OneDrive folder syncs to your account. The CLAUDE.md and Context files transfer with the vault. The obsidian-vault skill is shared via Kipu's Cowork tenant - you lose access to it when you leave, but the .plugin file in releases/ in this repo is a fallback.
+Your vault belongs to you. The OneDrive folder syncs to your account. The CLAUDE.md and Context files transfer with the vault. The obsidian-vault skill is shared via Kipu's Cowork tenant - you lose access to it when you leave, but the `.skill` file in `releases/` in this repo is a fallback (upload via claude.ai → Settings → Profile → Claude's skills).
 
 ## Can I customize this?
 
