@@ -1,4 +1,4 @@
-scaffold_version: 1.0.0
+scaffold_version: 1.0.4
 installed_at: {{install_date}}
 user_name: {{full_name}}
 preferred_name: {{preferred_name}}

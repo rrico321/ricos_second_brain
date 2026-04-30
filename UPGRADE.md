@@ -1,6 +1,8 @@
 # UPGRADE.md - How Updates Work
 
-This repo evolves over time. Your vault is a mix of repo-derived files (the scaffold) and your personal content. Updates touch the scaffold and never touch your content.
+> **Note: not yet implemented in v1.0.x.** This document describes the planned automated update flow. The `cowork check for second-brain updates` command, the diff/merge walkthrough, and automatic `.scaffold-backup/<old-version>/` snapshots all land in a v1.x release. For now, if you want to roll back a manual change, use OneDrive version history (right-click file → Version history). To pull repo updates manually, run `SETUP.md` again on a new vault and copy your content over, or apply specific changes by hand from `CHANGELOG.md`.
+
+This repo evolves over time. Your vault is a mix of repo-derived files (the scaffold) and your personal content. Updates will touch the scaffold and never touch your content.
 
 ## Three-tier file model
 

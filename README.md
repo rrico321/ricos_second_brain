@@ -4,7 +4,25 @@ Foundation for any Kipu Health employee (or external user) to spin up a personal
 
 ## Status
 
-Alpha. v1.0.0. Private until stress-tested with required parties. 
+Alpha. v1.0.4. Internal-use repo, hosted on GitHub for distribution. Stress-testing with a small group before broader Kipu rollout.
+
+## Current Status (what's real vs planned)
+
+| Capability | State |
+|---|---|
+| Fresh vault bootstrap via `SETUP.md` | ✅ Works now |
+| Vault scaffold (folders, templates, base subheaders) | ✅ Works now |
+| Three schedules (Morning Summary, Vault Tidy Noon, Vault Tidy Evening) | ✅ Works now |
+| `obsidian-vault` skill behaviour (notes, tasks, daily summaries, meeting notes, lint, archive, sort inbox) | ✅ Works now |
+| Compliance guardrails (HIPAA / PHI / BAA hard-rules) | ✅ Works now |
+| Org-shared skill via Kipu Cowork tenant | ⚠️ Internal-only |
+| Approved Kipu connectors (Slack, M365, Atlassian, etc.) | ⚠️ Internal-only |
+| Automated update flow (`cowork check for second-brain updates`) | ❌ Not yet implemented (see UPGRADE.md) |
+| Auto-backup on update (`.scaffold-backup/<old-version>/`) | ❌ Not yet implemented |
+| Rollback workflow | ❌ Not yet implemented |
+| PR-driven skill source updates | ❌ Not yet implemented (skill source not yet in this repo) |
+
+For v1.0.x, manual rollback uses OneDrive version history. The automated update flow lands in v1.x.
 
 ## Who this is for
 

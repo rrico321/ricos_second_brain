@@ -41,7 +41,7 @@ On demand: `sort inbox` — Cowork classifies and proposes destinations for anyt
 
 ## Updating
 
-Tell Cowork: `Check for second-brain updates`. See `UPGRADE.md` in the repo.
+The automated update flow (`Check for second-brain updates`) is planned for a v1.x release and not yet implemented. For v1.0.x, watch `CHANGELOG.md` in the repo and apply notable changes manually. See `UPGRADE.md` for the planned model.
 
 ## More
 

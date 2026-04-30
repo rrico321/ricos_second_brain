@@ -222,4 +222,4 @@ Then suggest three things to try in the next 24 hours:
 2. Tomorrow morning, watch the morning summary fire
 3. Add tasks naturally as they come up in conversation
 
-End with: "Run `cowork check for second-brain updates` whenever you want to pull repo changes."
+End with: "The automated update flow is not implemented in v1.0.x. To pull future repo changes manually, watch `CHANGELOG.md` in the repo and apply notable items by hand. The `cowork check for second-brain updates` command lands in a v1.x release."

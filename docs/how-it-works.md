@@ -43,7 +43,6 @@ Plain English to Cowork. Examples:
 - "What are my tasks today?"
 - "Tidy my vault"
 - "Sort inbox"
-- "Check for second-brain updates"
 
 Cowork uses CLAUDE.md to route the request to the right skill, executes, and writes results back to the vault.
 
