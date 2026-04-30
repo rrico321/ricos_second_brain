@@ -25,16 +25,29 @@ The user is non-technical. Prefer plain English over jargon.
 
 ## Step 1: Confirm vault location
 
-Ask the user: **What is the absolute path to your Obsidian vault folder?**
+By the time SETUP.md is running, the user has already pointed Cowork at the folder where they want the vault built. Don't ask for a path — Cowork already knows its own working directory. The job here is to confirm, not to gather.
 
-Mac example: `/Users/<name>/Library/CloudStorage/OneDrive-KipuHealth/Obsidian`
-Windows example: `C:/Users/<name>/OneDrive - Kipu Health/Obsidian`
+1. Identify your current working directory (the folder Cowork was pointed at when this session opened).
+2. Tell the user, plainly:
 
-Verify the folder exists. If not, ask the user to create it and re-confirm.
+   > "I'm about to build your second-brain vault in **`<folder name>`** (full path: `<absolute path>`). Everything will be written here. Sound right? (yes / no)"
 
-If the user is on a Kipu Health email and the path does NOT contain `OneDrive`, warn them: per Kipu policy, company vaults must live on Microsoft 365 / OneDrive. Offer to abort or proceed with a documented override.
+   Use the actual folder name and absolute path — don't make the user type either.
 
-Set the verified path as `<VAULT_ROOT>` for the rest of this script.
+3. If the user says **yes**, set the working directory as `<VAULT_ROOT>` and continue to Step 2.
+
+4. If the user says **no**, do NOT prompt them for a different path. Tell them:
+
+   > "No problem. Close this Cowork session, point Cowork at the folder you actually want the vault in, then re-run SETUP.md from there. The vault always builds in whatever folder Cowork is opened on."
+
+   Then stop the script.
+
+5. **OneDrive policy check (Kipu employees):** Before continuing, check whether the absolute path contains the substring `OneDrive` (case-insensitive). If it does NOT, warn the user:
+
+   > "Heads-up: this folder isn't on Microsoft 365 / OneDrive. Per Kipu policy, company vaults must live on OneDrive. Do you want to abort and re-point Cowork at a OneDrive folder, or proceed with a documented override? (abort / proceed)"
+
+   If they say **abort**, stop the script with the same "close Cowork, re-point at OneDrive folder, re-run SETUP.md" instruction.
+   If they say **proceed**, continue and note the override for Step 10's report.
 
 ---
 
