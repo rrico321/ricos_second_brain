@@ -1,6 +1,8 @@
 # rico-second-brain-poc
 
-Foundation for any Kipu Health employee (or external user) to spin up a personal AI-assisted second brain using Claude Cowork and Obsidian. Bring an empty vault. Run the bootstrap. End up with a personalized `CLAUDE.md`, three scheduled assistants, and a working knowledge graph in 10-15 minutes.
+Foundation for any Kipu Health employee to spin up a personal AI-assisted second brain using Claude Cowork and Obsidian. Bring an empty vault. Run the bootstrap. End up with a personalized `CLAUDE.md`, three scheduled assistants, and a working knowledge graph in 10–15 minutes.
+
+External (non-Kipu) use is supported as a fallback path with reduced functionality — the scaffold and the `obsidian-vault` skill are portable, but `CLAUDE.md` routes to several Kipu-internal skills that won't be available outside Kipu's Cowork tenant. See "Who this is for" below.
 
 ## Status
 
@@ -26,8 +28,9 @@ For v1.0.x, manual rollback uses OneDrive version history. The automated update 
 
 ## Who this is for
 
-- Primary: Kipu Health employees with access to a Cowork plan where the `obsidian-vault` skill has been shared org-wide
-- Secondary: External users (manual `.skill` install from `releases/` via claude.ai)
+**Primary: Kipu Health employees** with access to a Cowork plan where the `obsidian-vault` skill has been shared org-wide. Full functionality: scaffold, schedules, vault skill, and the Kipu-internal skills `CLAUDE.md` routes to (`kipu-health-standards`, `hipaa-data-flow-reviewer`, `incident-postmortem-writer`, etc.).
+
+**Secondary (fallback): External / non-Kipu users.** You can run `SETUP.md` and install the `obsidian-vault` skill from `releases/obsidian-vault.skill` via claude.ai → Settings → Profile → Claude's skills. The vault scaffold, the three schedules, and the core `obsidian-vault` skill all work. **But** the generated `CLAUDE.md` routes to Kipu-only skills (compliance review, ADR generation, runbooks, exec status reports, code review, etc.) that won't exist in your Cowork. Those rows will simply not match — you'll just get default Cowork behaviour. The repo is not currently re-packaged for non-Kipu use; that's a v1.x consideration if external demand emerges.
 
 ## What you get
 

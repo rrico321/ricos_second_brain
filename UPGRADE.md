@@ -1,48 +1,65 @@
-# UPGRADE.md - How Updates Work
+# UPGRADE.md — Planned Update Model
 
-> **Note: not yet implemented in v1.0.x.** This document describes the planned automated update flow. The `cowork check for second-brain updates` command, the diff/merge walkthrough, and automatic `.scaffold-backup/<old-version>/` snapshots all land in a v1.x release. For now, if you want to roll back a manual change, use OneDrive version history (right-click file → Version history). To pull repo updates manually, run `SETUP.md` again on a new vault and copy your content over, or apply specific changes by hand from `CHANGELOG.md`.
+> ⚠️ **Status: not implemented in v1.0.x.** This document describes the **planned** automated update flow targeted for a v1.x release. None of the automation described below exists today. For the v1.0.x manual workflow, see "How to update today" at the bottom of this file.
 
-This repo evolves over time. Your vault is a mix of repo-derived files (the scaffold) and your personal content. Updates will touch the scaffold and never touch your content.
+This repo will evolve over time. Your vault will be a mix of repo-derived files (the scaffold) and your personal content. Updates will touch the scaffold; they will never touch your content.
 
-## Three-tier file model
+---
 
-| Tier | Files | Update behavior |
+## Planned three-tier file model
+
+When the update flow ships, every file in your vault will fall into one of three tiers:
+
+| Tier | Files | Planned update behaviour |
 |------|-------|-----------------|
-| **Core scaffold** | `Context/Compliance.md`, `Templates/*`, schedule definitions | Replaced on update. Old versions backed up to `.scaffold-backup/<old-version>/` automatically. |
-| **Personalized** | `CLAUDE.md`, `Context/context.md`, `Context/projects.md`, `Home.md` | Never auto-replaced. New template additions surfaced as a diff. You decide what to merge. |
-| **User content** | `Daily Notes/`, `Meeting Notes/`, `Projects/`, `Tasks/`, `Candidates/`, `People/`, `Issues/`, `SOPs/`, `1on1s/`, `Stakeholders/`, `Strategic Initiatives/`, `Context/Memory.md` | Never touched. Ever. |
+| **Core scaffold** | `Context/Compliance.md`, `Templates/*`, schedule definitions | Will be replaced on update. Old version backed up to `.scaffold-backup/<old-version>/` automatically. |
+| **Personalized** | `CLAUDE.md`, `Context/context.md`, `Context/projects.md`, `Home.md` | Never auto-replaced. New template additions surfaced as a diff; you decide what to merge. |
+| **User content** | `Daily Notes/`, `Meeting Notes/`, `Projects/`, `Tasks/`, `Candidates/`, `People/`, `Issues/`, `SOPs/`, `Inbox/`, `1on1s/`, `Stakeholders/`, `Strategic Initiatives/`, `Context/Memory.md` | Never touched. Ever. |
 
-## Versioning
+This three-tier guarantee — especially the "never touched" promise on user content — is the design contract of the update model.
+
+## Planned versioning model
 
 Semver-style:
 
-- Patch (`1.0.x`): bug fixes only. Auto-applicable.
-- Minor (`1.x.0`): new templates, new schedules, refined skill prompts. Opt-in via update flow.
-- Major (`x.0.0`): breaking changes. Opt-in with explicit migration notes in `CHANGELOG.md`.
+- **Patch (`1.0.x`)** — bug fixes only. Will be auto-applicable.
+- **Minor (`1.x.0`)** — new templates, new schedules, refined skill prompts. Opt-in via the update flow.
+- **Major (`x.0.0`)** — breaking changes. Opt-in with explicit migration notes in `CHANGELOG.md`.
 
-Your installed version lives in `Context/.scaffold-version.yaml` in your vault.
+Your installed version lives in `Context/.scaffold-version.yaml` in your vault. That file already exists and tracks your installed version (currently `1.0.4`); it will be the input to the planned diff flow.
 
-## How to check for updates
+## Planned `Check for second-brain updates` flow
 
-In Cowork, say: **`Check for second-brain updates`**
+When implemented, the user will say to Cowork: **`Check for second-brain updates`**, and Cowork will:
 
-Cowork will:
+1. Read the latest `CHANGELOG.md` from the repo.
+2. Compare against the installed version in `Context/.scaffold-version.yaml`.
+3. Walk the user through each change since their installed version.
+4. Back up Core scaffold files to `.scaffold-backup/<old-version>/` before replacing them.
+5. Show diffs for Personalized files and ask before merging anything.
+6. Update `Context/.scaffold-version.yaml` when done.
 
-1. Read the latest `CHANGELOG.md` from the repo
-2. Compare against your installed version
-3. Walk you through each change
-4. Back up Core scaffold files to `.scaffold-backup/<old-version>/` before replacing
-5. Show diffs for Personalized files and ask before merging anything
-6. Update `Context/.scaffold-version.yaml` when done
+If a user manually edited a Core scaffold file (e.g., a Template), the planned flow will detect the diff and ask before overwriting. They can keep their custom version, in which case they stay on the old scaffold version for that file.
 
-## What if I customized a Core scaffold file?
+## Planned rollback story
 
-If you manually edited a Core scaffold file (e.g., a Template), Cowork detects the diff and asks before overwriting. You can keep your custom version, in which case you stay on the old scaffold version for that file.
+The planned model has **no formal rollback command.** The `.scaffold-backup/<old-version>/` folder will preserve prior versions of replaced Core scaffold files; rollback will be a manual copy-back from that folder.
 
-## Rollback
+## Skill updates (always out of band)
 
-There is no formal rollback. The `.scaffold-backup/` folder preserves prior versions of replaced files. To roll back, copy them back manually.
+The `obsidian-vault` skill itself is NOT and will NOT be updated through this repo's update flow. It is shared via Cowork's per-skill share toggle. When the skill owner publishes a change, it propagates to everyone with the share instantly. The `.skill` artifact in `releases/` is the fallback for non-Kipu users and is updated manually when the skill ships meaningful changes. Your `Context/.scaffold-version.yaml` does not track skill version.
 
-## Skill updates
+PR-driven skill source updates (a `skills/` source tree in this repo with a build step that produces the `.skill` artifact) are out of scope for v1.0 and a v1.x consideration if contributor demand emerges.
 
-The `obsidian-vault` skill itself is NOT updated through this repo. It is shared via Cowork's per-skill share toggle. When the skill owner publishes a change, it propagates to everyone instantly. Your `Context/.scaffold-version.yaml` does not track skill version.
+---
+
+## How to update today (v1.0.x)
+
+Until the automated flow ships, updates are manual:
+
+1. **Watch `CHANGELOG.md`** in the repo for changes that affect you.
+2. **Apply notable changes by hand** to your vault — copy updated `Templates/*`, edit `Context/Compliance.md` if it changed, adjust schedule trigger phrases if renamed, etc.
+3. **For rollback or recovery:** use OneDrive version history (right-click file → Version history → Restore). This works on every file in the vault.
+4. **Bump `Context/.scaffold-version.yaml`** by hand if you applied a meaningful set of changes, so future you knows where you are.
+
+For a fresh install or a from-scratch reset, run `SETUP.md` against a new empty vault and copy your `Daily Notes/`, `Meeting Notes/`, `Projects/`, `Tasks/`, etc. across by hand.

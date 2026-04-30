@@ -30,6 +30,30 @@ This is a private POC repo until stress-tested. Once public, contribution rules 
 - Avoid OS-specific commands or shell scripts
 - Keep lines reasonably short for diff readability
 
+## Pre-push consistency checklist
+
+Run through this list before pushing. The repo doesn't ship an automated CI script (per the "no scripts" constraint), so consistency is enforced manually until/unless a tiny GitHub Actions yaml workflow is added.
+
+**Version consistency:**
+- [ ] `README.md` Status line version matches latest `CHANGELOG.md` entry
+- [ ] `scaffold/Context/.scaffold-version.yaml.template` `scaffold_version:` matches latest `CHANGELOG.md` entry
+- [ ] `CHANGELOG.md` has an entry for the version you're shipping
+
+**Placeholder integrity:**
+- [ ] Every `{{placeholder_name}}` used in a `.template` file is either filled by an interview answer in `SETUP.md` Step 3, or has a default in the Step 4 defaults table
+- [ ] No bare `{{...}}` left in non-template `.md` files (would render as literal text in the user's vault)
+
+**Cross-doc consistency:**
+- [ ] If you renamed a folder, schedule, or template, grep the whole repo for the old name and update all references (`grep -r "old-name" .`)
+- [ ] If you changed an interview Q-number, all `Q\d` references in `SETUP.md` Step 5/6 and `scaffold/Tasks/Tasks.md.template` still point to the right question
+- [ ] Schedule names, crons, and trigger phrases in `SETUP.md` Step 7 table match the corresponding `schedules/<name>.md` file
+- [ ] Files referenced from `README.md` Documentation section all exist (`docs/*.md`, `CONTRIBUTING.md`, etc.)
+
+**Trust hygiene:**
+- [ ] If you added a feature that's not yet implemented, it's marked clearly (callout, "planned for v1.x", or in the README "Current Status" table)
+- [ ] If you removed a feature, all references to it are gone (FAQ examples, vault-anatomy flow, schedule list, etc.)
+- [ ] No personal data (names, vault paths, ticket numbers) snuck into docs that ship to all users
+
 ## Skill changes
 
 To propose a change to the `obsidian-vault` skill itself:
