@@ -76,10 +76,15 @@ Ask each question one at a time, in plain text, in the order listed below. Wait 
 5. **What department do you work in?**
 6. **Who is your direct manager?** (reply "none" if you do not have one)
 7. **Do you manage people? If yes, list their first names separated by commas (e.g., "Maria, Jamal, Priya"). If not, reply "no".**
-8. **Top three current projects or initiatives?** (free text, comma-separated)
+   *If yes:* I'll create a `1on1s/` folder with a subfolder per name, and add a `### Direct Reports / 1:1 follow-ups` subheader to your task list. *If no:* neither is created.
+8. **Top three current projects or initiatives?** (free text, comma-separated — reply "skip" if you don't want to list any right now; you can add projects later by telling Cowork)
+   *Effect:* I'll pre-create a `Projects/<Project Name>.md` file for each one with a starter template, and link them in `Home.md` and `index.md`.
 9. **Do you track strategic initiatives or OKRs separately from project work?** (yes / no)
+   *If yes:* I'll create a `Strategic Initiatives/` folder and add a `### Strategic Initiatives` subheader to your task list. *If no:* neither is created.
 10. **Do you have external stakeholders to track?** (board, investors, key customers — yes / no)
+    *If yes:* I'll create a `Stakeholders/` folder and add a `### Stakeholder Comms` subheader to your task list. *If no:* neither is created.
 11. **Do you participate in hiring?** (interview candidates for open roles — yes / no)
+    *If yes:* I'll create a `Candidates/` folder where you can drop one file per candidate you're interviewing. *If no:* the folder isn't created — you can ask me to add it later if your role changes.
 12. **What communication style do you prefer from Cowork?** (reply with the number)
     1. Direct and concise (default)
     2. Conversational
@@ -178,6 +183,8 @@ Owner: "[[{{preferred_name}}]]"
 ````
 
 Update `Home.md` and `index.md` with these projects (add to Active Projects section in Home.md, add a row to the Projects table in index.md).
+
+If the user replied "skip" to Q8, skip Step 6 entirely — do not create any project files, and leave the Active Projects section in `Home.md` and the Projects table in `index.md` empty (no rows).
 
 If a project name slot is empty (user provided fewer than 3), skip that slot. Do not create empty project files.
 
