@@ -1,10 +1,17 @@
+<%*
+const name = await tp.system.prompt("Direct report name");
+const date = tp.date.now("YYYY-MM-DD");
+const filename = date + " - 1on1";
+await tp.file.rename(filename);
+await tp.file.move("/1on1s/" + name + "/" + filename);
+-%>
 ---
 tags: #1on1 #meeting
-date: <% tp.date.now("YYYY-MM-DD") %>
-direct_report:
+date: <% date %>
+direct_report: <% name %>
 ---
 
-# 1:1 with <% tp.system.prompt("Direct report name") %> - <% tp.date.now("YYYY-MM-DD") %>
+# 1:1 with <% name %> - <% date %>
 
 ---
 
@@ -56,4 +63,4 @@ direct_report:
 
 ## Related
 
-- [[<% tp.system.prompt("Direct report wikilink (e.g. Jane Smith)") %>]]
+- [[<% name %>]]

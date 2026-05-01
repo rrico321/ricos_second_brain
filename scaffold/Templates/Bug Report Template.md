@@ -1,3 +1,10 @@
+<%*
+const id = await tp.system.prompt("Bug ID (e.g. 2026-0001)");
+const title = await tp.system.prompt("Bug title");
+const filename = "BUG-" + id + " - " + title;
+await tp.file.rename(filename);
+await tp.file.move("/Issues/" + filename);
+-%>
 ---
 tags: #bug
 Status: Open
@@ -6,7 +13,7 @@ Reported: <% tp.date.now("YYYY-MM-DD") %>
 Assigned:
 ---
 
-# BUG-<% tp.system.prompt("Bug ID (e.g. 2026-0001)") %> - <% tp.system.prompt("Bug title") %>
+# BUG-<% id %> - <% title %>
 
 ---
 

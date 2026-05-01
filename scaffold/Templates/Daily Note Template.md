@@ -1,3 +1,8 @@
+<%*
+const date = tp.date.now("YYYY-MM-DD");
+await tp.file.rename(date);
+await tp.file.move("/Daily Notes/" + date);
+-%>
 ---
 tags: #daily
 date: <% tp.date.now("YYYY-MM-DD") %>

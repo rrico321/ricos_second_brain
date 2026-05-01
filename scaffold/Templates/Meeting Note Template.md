@@ -1,10 +1,17 @@
+<%*
+const date = tp.date.now("YYYY-MM-DD");
+const title = await tp.system.prompt("Meeting title");
+const filename = date + " - " + title;
+await tp.file.rename(filename);
+await tp.file.move("/Meeting Notes/" + filename);
+-%>
 ---
 tags: #meeting
-date: <% tp.date.now("YYYY-MM-DD") %>
+date: <% date %>
 attendees:
 ---
 
-# <% tp.date.now("YYYY-MM-DD") %> - <% tp.system.prompt("Meeting title") %>
+# <% date %> - <% title %>
 
 ---
 
