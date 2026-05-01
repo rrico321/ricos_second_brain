@@ -16,8 +16,8 @@ A tour of every folder and file in your vault — what it is, when it's used, an
 |---|---|---|---|
 | `Daily Notes/` | `YYYY-MM-DD.md` | One per workday. Use the `Daily Note Template`. | Journal + scratchpad. Focus, free notes, tomorrow / follow-ups, live open-tasks query. |
 | `Meeting Notes/` | `YYYY-MM-DD - Title.md` | One per meeting. Auto-created when you say "I had a meeting with X" or paste a transcript. | Permanent record: subject, key takeaways, owners table, links back to projects/people. |
-| `Tasks/` | `Tasks.md` (active), `Archive/Archive.md` (done) | Add tasks anywhere in conversation. Tidy Evening archives `[x]` and `[-]` lines. | Single source of truth for everything you owe or are tracking. Powered by the Tasks plugin so queries like "due before today, sort by urgency" just work. |
-| `Inbox/` | Free-form, any filename | Drop anything here that doesn't have an obvious home: voice transcripts, half-formed ideas, links, screenshots. Tidy Noon and Tidy Evening flag the count; on-demand `sort inbox` proposes destinations and moves them. | Capture-first landing zone. Don't think about filing in the moment - just drop it here. |
+| `Tasks/` | `Tasks.md` (active), `Archive/Archive.md` (done) | Add tasks anywhere in conversation. Vault Tidy archives `[x]` and `[-]` lines twice a day. | Single source of truth for everything you owe or are tracking. Powered by the Tasks plugin so queries like "due before today, sort by urgency" just work. |
+| `Inbox/` | Free-form, any filename | Drop anything here that doesn't have an obvious home: voice transcripts, half-formed ideas, links, screenshots. Vault Tidy flags the count twice a day; on-demand `sort inbox` proposes destinations and moves them. | Capture-first landing zone. Don't think about filing in the moment - just drop it here. |
 
 ## Context / reference (read by Cowork on demand)
 
@@ -55,8 +55,10 @@ If you said "no" to any of these during the interview, the matching folder simpl
 
 1. **08:00 weekday** — `Morning Summary` schedule fires. Cowork reads `CLAUDE.md` → loads the `obsidian-vault` skill → reads `Tasks/Tasks.md`, the most recent `Daily Notes/`, recent `Meeting Notes/`, and active `Projects/`. Output: 4 sections (Overdue, Due in 3 days, Stale undated, Project status).
 2. **Throughout the day** — meetings produce `Meeting Notes/<date> - Title.md` with action items pushed into `Tasks/Tasks.md` under `### Work`. Decisions worth keeping go to `Context/Memory.md`.
-3. **12:00 weekday** — `Vault Tidy (Noon)` runs read-only health check: orphan pages, broken wikilinks, stale daily notes, `Active` projects with no recent updates. Counts `Inbox/` items and flags if any are waiting.
-4. **18:00 weekday** — `Vault Tidy (Evening)` runs the same Tidy pass plus archives any `- [x]` / `- [-]` task lines from `Tasks.md` to `Archive.md` with a `✅ <today>` stamp. Same Inbox flag.
+3. **12:00 weekday** — `Vault Tidy (Noon)` runs a full housekeeping pass:
+   - **Auto-do:** archives completed tasks, rebuilds `index.md`, syncs `Context/projects.md` with project file changes, updates linked sections in `Home.md`, appends a Tidy summary to `Memory.md`.
+   - **Surfaces for action:** Inbox count, orphan pages, broken wikilinks, stale `Active` projects (14+ days untouched), dangling tasks in today's Daily Note, meeting notes with empty Owners tables, frontmatter gaps, stale undated tasks.
+4. **18:00 weekday** — `Vault Tidy (Evening)` runs the **same pass** as Tidy Noon. Twice a day keeps the vault current; there's no behavioral split between the two.
 5. **On demand** — When you have a moment, say `sort inbox` and Cowork classifies each Inbox item, proposes a destination + filename + frontmatter, and moves them on your approval.
 
 ## Three-tier file model (worth knowing)

@@ -34,8 +34,8 @@ This is your personal Obsidian vault, scaffolded by `rico-second-brain-poc`.
 Three schedules run automatically (when your machine is on):
 
 - 08:00 weekdays - Morning Summary
-- 12:00 weekdays - Vault Tidy (read-only health check + Inbox flag)
-- 18:00 weekdays - Vault Tidy + archive completed tasks
+- 12:00 weekdays - Vault Tidy (full housekeeping pass: archive, rebuild index, sync projects, surface orphans/stale items)
+- 18:00 weekdays - Vault Tidy (same pass — twice a day keeps the vault current)
 
 On demand: `sort inbox` — Cowork classifies and proposes destinations for anything sitting in `Inbox/`.
 

@@ -36,7 +36,7 @@ For v1.0.x, manual rollback uses OneDrive version history. The automated update 
 
 - An Obsidian vault scaffold with sensible folders and templates
 - A personalized `CLAUDE.md` that routes Cowork to the right skill for each task
-- Three scheduled assistants: morning summary, midday Vault Tidy, evening Vault Tidy with archive
+- Three scheduled assistants: morning summary, midday Vault Tidy, evening Vault Tidy (same housekeeping pass twice a day)
 - The `obsidian-vault` skill that knows your conventions, naming, plugin syntax, and maintenance workflows
 - A `Compliance.md` guardrail referenced from `CLAUDE.md` so the agent reads org rules first
 
@@ -71,6 +71,7 @@ That is the full install. The rest is Cowork's job.
 - `CONTRIBUTING.md` - how to suggest changes
 - `docs/how-it-works.md` - architecture explainer
 - `docs/vault-anatomy.md` - folder-by-folder tour of what lives in your vault and why
+- `docs/workflows.md` - every workflow you can ask Cowork to run, with trigger phrases and behavior
 - `docs/faq.md` - common questions
 - `docs/troubleshooting.md` - install issues
 - `docs/connectors-approved.md` - Kipu-approved connector list

@@ -32,8 +32,8 @@ For non-Kipu: install the `.skill` from `releases/` in this repo via claude.ai â
 Three scheduled tasks Cowork runs automatically (when your machine is on):
 
 - 08:00 weekdays - Morning Summary
-- 12:00 weekdays - Vault Tidy (read-only health check + Inbox flag)
-- 18:00 weekdays - Vault Tidy + archive completed tasks
+- 12:00 weekdays - Vault Tidy (full housekeeping pass)
+- 18:00 weekdays - Vault Tidy (same pass â€” runs twice a day)
 
 ## How a user interacts
 

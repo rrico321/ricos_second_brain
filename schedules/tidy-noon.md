@@ -6,13 +6,24 @@
 
 ## What it does
 
-Read-only health check:
+Full daily housekeeping pass. Same workflow as Tidy Evening — there is no longer a "noon read-only" / "evening with archive" split. Tidy is one workflow regardless of when it runs.
 
-- Surfaces orphan pages (no inbound wikilinks)
-- Surfaces missing pages (wikilinks to files that don't exist)
-- Surfaces stale content (daily notes >14 days old, dashboards >7 days, projects with no recent updates)
-- Counts items in `Inbox/` and flags if any exist: "You have N items waiting in Inbox/. Run `sort inbox` when ready."
-- Reports findings without making changes
+**Auto-do (no user input):**
+- Archive completed tasks (`[x]` and `[-]`) from `Tasks/Tasks.md` to `Tasks/Archive/Archive.md` with `✅ <today>` stamp
+- Rebuild `index.md` (full vault catalog)
+- Sync `Context/projects.md` with current `Projects/` files
+- Update linked sections in `Home.md` (Active Projects, SOPs, Recent Meeting Notes, Team, Candidates, Templates)
+- Append a Tidy summary entry to `Context/Memory.md`
+
+**Surface for user action (no auto-changes):**
+- Inbox count: "You have N items waiting in `Inbox/`. Run `sort inbox` when ready."
+- Orphan pages, missing wikilinks, stale Active projects (14+ days untouched)
+- Dangling tasks in today's Daily Note that look like commitments but aren't formatted as Tasks lines
+- Meeting notes from past 3 days with empty Owners tables
+- Frontmatter gaps (projects missing Status, candidates missing Position, etc.)
+- Stale undated tasks (no `📅`, created 10+ days ago)
+
+Tidy NEVER auto-sorts Inbox content. Classification is on-demand via the `Sort Inbox` workflow.
 
 ## Setup instructions for SETUP.md
 
