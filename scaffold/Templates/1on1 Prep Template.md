@@ -2,8 +2,11 @@
 const name = await tp.system.prompt("Direct report name");
 const date = tp.date.now("YYYY-MM-DD");
 const filename = date + " - 1on1";
-await tp.file.rename(filename);
-await tp.file.move("/1on1s/" + name + "/" + filename);
+const folderPath = "1on1s/" + name;
+if (!(await app.vault.adapter.exists(folderPath))) {
+  await app.vault.createFolder(folderPath);
+}
+await tp.file.move("/" + folderPath + "/" + filename);
 -%>
 ---
 tags: #1on1 #meeting

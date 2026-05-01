@@ -1,11 +1,18 @@
 <%*
 const date = tp.date.now("YYYY-MM-DD");
-await tp.file.rename(date);
+const targetPath = "Daily Notes/" + date + ".md";
+if (await tp.file.exists(targetPath)) {
+  new Notice(`⚠️ Daily note for ${date} already exists. Opening it — this template won't overwrite.`);
+  await app.vault.delete(tp.config.target_file);
+  const existing = app.vault.getAbstractFileByPath(targetPath);
+  if (existing) await app.workspace.getLeaf().openFile(existing);
+  return;
+}
 await tp.file.move("/Daily Notes/" + date);
 -%>
 ---
 tags: #daily
-date: <% tp.date.now("YYYY-MM-DD") %>
+date: <% date %>
 ---
 
 # Daily Note - <% tp.date.now("YYYY-MM-DD, dddd") %>

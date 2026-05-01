@@ -2,7 +2,6 @@
 const date = tp.date.now("YYYY-MM-DD");
 const title = await tp.system.prompt("Meeting title");
 const filename = date + " - " + title;
-await tp.file.rename(filename);
 await tp.file.move("/Meeting Notes/" + filename);
 -%>
 ---

@@ -70,14 +70,15 @@ Complete catalog of every page in this vault. Organized by category with one-lin
 | [[Glossary]] | Domain terms (HL7, OBX, LOINC, etc.), status labels, vault folder reference. |
 | [[projects]] | Quick-reference tracker for all active projects with status and key details. |
 
-## Templates (4)
+## Templates (5)
 
 | Page | Summary |
 |------|---------|
-| [[Daily Note Template]] | Templater-powered daily note with Focus, Notes, Follow-up, and Open Tasks query. |
-| [[Meeting Note Template]] | Templater-powered meeting note with attendees, takeaways, and owners table. |
-| [[Bug Report Template]] | Templater-powered bug report with ID prompt, frontmatter, and investigation steps. |
-| [[Task Template]] | Templater script that creates a task line with optional due date. |
+| [[Daily Note Template]] | Templater-powered daily note with Focus, Notes, Follow-up, and Open Tasks query. Self-routes to `Daily Notes/YYYY-MM-DD.md`. |
+| [[Meeting Note Template]] | Templater-powered meeting note with attendees, takeaways, and owners table. Self-routes to `Meeting Notes/YYYY-MM-DD - Title.md`. |
+| [[Bug Report Template]] | Templater-powered bug report with ID prompt, frontmatter, and investigation steps. Self-routes to `Issues/BUG-<id> - <title>.md`. |
+| [[Task Template]] | Templater script that creates a task line with optional due date. Inline insert (no file). |
+| [[1on1 Prep Template]] | Templater-powered 1:1 prep note with wins, blockers, career, agenda, and action items. Self-routes to `1on1s/<Name>/YYYY-MM-DD - 1on1.md`. |
 
 ## Other (1)
 

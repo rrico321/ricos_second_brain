@@ -2,7 +2,6 @@
 const id = await tp.system.prompt("Bug ID (e.g. 2026-0001)");
 const title = await tp.system.prompt("Bug title");
 const filename = "BUG-" + id + " - " + title;
-await tp.file.rename(filename);
 await tp.file.move("/Issues/" + filename);
 -%>
 ---
