@@ -25,29 +25,35 @@ The user is non-technical. Prefer plain English over jargon.
 
 ## Step 1: Confirm vault location
 
-By the time SETUP.md is running, the user has already pointed Cowork at the folder where they want the vault built. Don't ask for a path — Cowork already knows its own working directory. The job here is to confirm, not to gather.
+**Critical: do NOT ask the user "what is the absolute path to your Obsidian vault folder?" or any equivalent. Do NOT show Mac/Windows path examples. Do NOT check whether the path is on OneDrive. Do NOT prompt the user to type or paste a path.**
 
-1. Identify your current working directory (the folder Cowork was pointed at when this session opened).
-2. Tell the user, plainly:
+The Cowork session is already bound to a folder — the project folder the user selected when they opened this chat. That folder IS where the vault will be built. Your only job in this step is to confirm. The user has already chosen.
 
-   > "I'm about to build your second-brain vault in **`<folder name>`** (full path: `<absolute path>`). Everything will be written here. Sound right? (yes / no)"
+### What to do
 
-   Use the actual folder name and absolute path — don't make the user type either.
+1. **Detect the current working directory** (the folder Cowork is bound to). This is available from your environment — it does not require user input.
 
-3. If the user says **yes**, set the working directory as `<VAULT_ROOT>` and continue to Step 2.
+2. **Send exactly one confirmation message** in this format. Substitute the real folder name (basename of the cwd) and the real absolute path. Do not add anything else — no policy warnings, no Mac/Windows examples, no "if not, please provide" fallbacks, no OneDrive checks:
 
-4. If the user says **no**, do NOT prompt them for a different path. Tell them:
+   > "I'll build your second-brain vault in **`<folder name>`** (full path: `<absolute path>`). Everything will be written here. Sound right? (yes / no)"
 
-   > "No problem. Close this Cowork session, point Cowork at the folder you actually want the vault in, then re-run SETUP.md from there. The vault always builds in whatever folder Cowork is opened on."
+3. **Wait for the user's reply** before doing anything else.
 
-   Then stop the script.
+### Branching on the reply
 
-5. **OneDrive policy check (Kipu employees):** Before continuing, check whether the absolute path contains the substring `OneDrive` (case-insensitive). If it does NOT, warn the user:
+- **If the user says yes** (or "yep", "go", "looks right", etc.): set the cwd as `<VAULT_ROOT>` and proceed directly to Step 2.
 
-   > "Heads-up: this folder isn't on Microsoft 365 / OneDrive. Per Kipu policy, company vaults must live on OneDrive. Do you want to abort and re-point Cowork at a OneDrive folder, or proceed with a documented override? (abort / proceed)"
+- **If the user says no**: do NOT ask for a different path. Send this message verbatim and stop the script:
 
-   If they say **abort**, stop the script with the same "close Cowork, re-point at OneDrive folder, re-run SETUP.md" instruction.
-   If they say **proceed**, continue and note the override for Step 10's report.
+  > "No problem. Close this Cowork session, point Cowork at the folder you actually want the vault in, then re-run SETUP.md from there. The vault always builds in whatever folder Cowork is opened on."
+
+### Anti-patterns (do not do these)
+
+- ❌ "What is the absolute path to your Obsidian vault folder?"
+- ❌ "Mac example: `/Users/<name>/Library/CloudStorage/...`"
+- ❌ Any OneDrive substring check or "is this on OneDrive?" warning. Vault location policy lives in `Context/Compliance.md`, not in this setup script. The user's IT environment, not the bootstrap, enforces storage rules.
+- ❌ Offering the cwd as a fallback option *while still asking for a path* ("If the vault you want is the currently selected folder, just let me know")
+- ❌ Asking the user to type, paste, confirm, or correct the path string itself
 
 ---
 
