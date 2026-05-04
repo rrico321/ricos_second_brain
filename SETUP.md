@@ -6,14 +6,26 @@ This file is read by Claude Cowork. If you are a human reading this, you don't n
 
 You are bootstrapping a personalized Obsidian vault for the user. Walk through every step in order. Ask questions in plain English. Use your file tools (Read, Write, Edit) to operate on files inside the user's vault folder. Use `mcp__scheduled-tasks__create_scheduled_task` to create schedules.
 
-Never:
-- Run shell commands
-- Touch files outside the user's vault folder
+### Critical rules — read these before you announce anything
+
+- **Do NOT announce or summarize what you're about to do across the whole setup before reading each step's full content.** Read each step in order, in full, before acting. Do NOT pre-commit to a plan ("I'll start with Step 1 and ask for your vault path") based on what setup scripts *usually* do — execute what THIS script literally instructs, step by step.
+- **Do NOT ask the user for a vault path.** The Cowork session is already bound to a folder — that folder IS the vault location. Your job in Step 1 is to confirm the cwd, not to gather a path.
+- **Do NOT show Mac/Windows path examples.** They are explicitly forbidden.
+- **Do NOT check whether the path contains "OneDrive" or warn about storage location.** Storage policy lives in `Context/Compliance.md`, not in this setup script.
+- **The exact Step 1 confirmation message** Cowork should send is:
+  > "I'll build your second-brain vault in **`<folder name>`** (full path: `<absolute path>`). Everything will be written here. Sound right? (yes / no)"
+  Substitute the actual folder name and absolute path. Send nothing else as the first message — no Mac/Windows examples, no policy warnings, no fallback options, no questions about the path.
+
+### Never
+
+- **Run shell commands against the user's vault folder.** No `cp`, `rsync`, `mv`, `rm`, shell loops, or any other shell-driven manipulation of the vault. All file operations on the vault must use your native file tools (Read, Write, Edit). *(You MAY use a sandboxed shell — separate from the user's machine — to read this repo, e.g., `git clone` into a temp dir, or `curl` raw files. The constraint is about not touching the user's vault with shell commands, not about how you fetch repo content into your own working memory.)*
+- Touch files outside the user's vault folder (on the user's machine)
 - Skip the interview
 - Assume answers if the user does not respond
 - **Batch interview questions.** Do NOT ask multiple questions in one message, do NOT use AskUserQuestion to bundle several questions, and do NOT pre-fill answers from any user profile or memory. The interview must be strictly sequential: one question, wait for the answer, next question.
 
-Always:
+### Always
+
 - Confirm before destructive operations
 - Use forward slashes in paths the user sees
 - Translate paths per-OS when actually writing files
@@ -23,11 +35,9 @@ The user is non-technical. Prefer plain English over jargon.
 
 ---
 
-## Step 1: Confirm vault location
+## Step 1: Use the current Cowork working directory as the vault
 
-**Critical: do NOT ask the user "what is the absolute path to your Obsidian vault folder?" or any equivalent. Do NOT show Mac/Windows path examples. Do NOT check whether the path is on OneDrive. Do NOT prompt the user to type or paste a path.**
-
-The Cowork session is already bound to a folder — the project folder the user selected when they opened this chat. That folder IS where the vault will be built. Your only job in this step is to confirm. The user has already chosen.
+The vault will be built in the folder Cowork is already bound to. You're confirming, not gathering. The user already chose this location when they opened the project.
 
 ### What to do
 
@@ -49,6 +59,7 @@ The Cowork session is already bound to a folder — the project folder the user 
 
 ### Anti-patterns (do not do these)
 
+- ❌ Announcing the plan before reading each step ("I'll start with Step 1 and ask for your vault path") — read first, then act.
 - ❌ "What is the absolute path to your Obsidian vault folder?"
 - ❌ "Mac example: `/Users/<name>/Library/CloudStorage/...`"
 - ❌ Any OneDrive substring check or "is this on OneDrive?" warning. Vault location policy lives in `Context/Compliance.md`, not in this setup script. The user's IT environment, not the bootstrap, enforces storage rules.
