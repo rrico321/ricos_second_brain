@@ -1,6 +1,6 @@
 # Vault README
 
-This is your personal Obsidian vault, scaffolded by `rico-second-brain-poc`.
+This is your personal Obsidian vault, scaffolded by the Kipu second-brain scaffold.
 
 ## Structure
 
@@ -45,6 +45,6 @@ The automated update flow (`Check for second-brain updates`) is planned for a v1
 
 ## More
 
-- Repo: https://github.com/rico/rico-second-brain-poc
+- Repo: https://github.com/rrico321/ricos_second_brain
 - Issues: open in the repo
 - Skill: `obsidian-vault` (lives in Cowork, not in your vault)

@@ -1,4 +1,4 @@
-# rico-second-brain-poc
+# ricos-second-brain
 
 Foundation for any Kipu Health employee to spin up a personal AI-assisted second brain using Claude Cowork and Obsidian. Bring an empty vault. Run the bootstrap. End up with a personalized `CLAUDE.md`, three scheduled assistants, and a working knowledge graph in 10–15 minutes.
 

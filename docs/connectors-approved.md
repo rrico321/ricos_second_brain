@@ -26,7 +26,7 @@ Status as of 2026-04-27. Update via PR when status changes.
 
 ## Under Investigation
 
-- **Custom MCP Server** - Rico evaluating for Salesforce / Gong / company-specific needs
+- **Custom MCP Server** - under evaluation for Salesforce / Gong / company-specific needs
 - **Salesforce hosted MCPs** - Salesforce now publishes their own MCPs; faster than building custom
 
 ## Avoid Personal Data
