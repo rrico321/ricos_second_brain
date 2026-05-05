@@ -48,6 +48,7 @@ Run through this list before pushing. The repo doesn't ship an automated CI scri
 - [ ] If you changed an interview Q-number, all `Q\d` references in `SETUP.md` Step 5/6 and `scaffold/Tasks/Tasks.md.template` still point to the right question
 - [ ] Schedule names, crons, and trigger phrases in `SETUP.md` Step 7 table match the corresponding `schedules/<name>.md` file
 - [ ] Files referenced from `README.md` Documentation section all exist (`docs/*.md`, `CONTRIBUTING.md`, etc.)
+- [ ] **`SETUP.md` Step 4 manifest matches the actual `scaffold/` tree.** Cowork can't enumerate `scaffold/` (the GitHub directory page is JS-rendered), so the manifest is the authoritative file list. If you add/rename/remove a scaffold file, update the manifest. Quick verify: `curl -s "https://api.github.com/repos/rrico321/ricos_second_brain/git/trees/main?recursive=1" | python3 -c "import json,sys;[print(x['path']) for x in json.load(sys.stdin)['tree'] if x['path'].startswith('scaffold/') and x['type']=='blob']"` should match the Source URL paths in the manifest.
 
 **Trust hygiene:**
 - [ ] If you added a feature that's not yet implemented, it's marked clearly (callout, "planned for v1.x", or in the README "Current Status" table)

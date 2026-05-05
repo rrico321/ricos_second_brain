@@ -114,18 +114,49 @@ Save all answers as `{{placeholder_name}}` values for the next steps.
 
 ## Step 4: Copy the base scaffold
 
-For each file under `scaffold/` in this repo, copy it to `<VAULT_ROOT>` preserving the relative path.
+**Why this step has an explicit file manifest below:** GitHub directory listings (`/tree/main/scaffold`) are JavaScript-rendered, so Cowork's `web_fetch` tool sees an empty shell when it tries to enumerate `scaffold/`. Cowork's `web_fetch` also has a URL-provenance guard that only allows fetching URLs that have appeared in conversation context. Both problems are solved by listing every URL explicitly here — once you read this manifest, those URLs are in your provenance set and you can fetch each one.
 
-For files ending in `.template`:
-- Strip the `.template` extension
-- Replace every `{{placeholder}}` with the corresponding interview answer
-- Write the result to the destination
+**Do not try to crawl the `scaffold/` directory.** Use the manifest below as the authoritative file list. If you cannot fetch a listed URL, surface that to the user and stop — do not invent file contents from memory or from descriptions elsewhere in the repo.
 
-For `.gitkeep` files:
-- Skip them. Just create the empty parent folder.
+### Manifest
 
-For non-template files (e.g., `Templates/Daily Note Template.md`):
-- Copy verbatim.
+For each row, fetch the **Source URL** and write the result to `<VAULT_ROOT>/<Destination>`. Apply the **Action** rule.
+
+Action legend:
+- **Template**: strip the trailing `.template` from the destination, substitute every `{{placeholder}}` with the matching interview answer (using the defaults table further down for blanks), then write.
+- **Verbatim**: write the fetched content to the destination unchanged.
+- **Folder**: do not fetch. Create the empty folder at the destination. (`.gitkeep` files in `scaffold/` exist only to preserve empty folders in Git; they are not copied to the vault.)
+
+| # | Source URL | Destination (relative to `<VAULT_ROOT>`) | Action |
+|---|---|---|---|
+| 1 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/CLAUDE.md.template` | `CLAUDE.md` | Template |
+| 2 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Home.md.template` | `Home.md` | Template |
+| 3 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/index.md.template` | `index.md` | Template |
+| 4 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/README.md` | `README.md` | Verbatim |
+| 5 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Context/.scaffold-version.yaml.template` | `Context/.scaffold-version.yaml` | Template |
+| 6 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Context/Compliance.md` | `Context/Compliance.md` | Verbatim |
+| 7 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Context/Glossary.md` | `Context/Glossary.md` | Verbatim |
+| 8 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Context/Memory.md` | `Context/Memory.md` | Verbatim |
+| 9 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Context/context.md.template` | `Context/context.md` | Template |
+| 10 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Context/projects.md.template` | `Context/projects.md` | Template |
+| 11 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Tasks/Tasks.md.template` | `Tasks/Tasks.md` | Template |
+| 12 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Tasks/Archive/Archive.md.template` | `Tasks/Archive/Archive.md` | Template |
+| 13 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Templates/Daily%20Note%20Template.md` | `Templates/Daily Note Template.md` | Verbatim |
+| 14 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Templates/Meeting%20Note%20Template.md` | `Templates/Meeting Note Template.md` | Verbatim |
+| 15 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Templates/Bug%20Report%20Template.md` | `Templates/Bug Report Template.md` | Verbatim |
+| 16 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Templates/Task%20Template.md` | `Templates/Task Template.md` | Verbatim |
+| 17 | `https://raw.githubusercontent.com/rrico321/ricos_second_brain/main/scaffold/Templates/1on1%20Prep%20Template.md` | `Templates/1on1 Prep Template.md` | Verbatim |
+| 18 | — | `Daily Notes/` | Folder |
+| 19 | — | `Meeting Notes/` | Folder |
+| 20 | — | `Projects/` | Folder |
+| 21 | — | `People/` | Folder |
+| 22 | — | `SOPs/` | Folder |
+| 23 | — | `Issues/` | Folder |
+| 24 | — | `Inbox/` | Folder |
+
+Spaces in URLs are URL-encoded (`%20`); spaces in destination paths are literal.
+
+After Step 5 (interview-driven additions), additional folders may be created (`1on1s/<Name>/`, `Strategic Initiatives/`, `Stakeholders/`, `Candidates/`). Those are not in the base manifest above — they're handled by Step 5.
 
 ### Default substitutions for skipped or empty answers
 
